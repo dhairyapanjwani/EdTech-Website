@@ -1,20 +1,29 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
-
-const navigation = [
-    { name: 'Home', href: '/home', current: true },
-    { name: 'Courses', href: '/courses', current: false },
-    { name: 'Reports', href: '/Reports', current: false },
-    { name: 'Lorem', href: '/lorem', current: false },
-]
+import { useHistory } from 'react-router';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function Navbar() {
+    const history = useHistory();
+
+    const [curr, setCurr] = useState(`/${window.location.href.split('/')[3]}`);
+
+    useEffect(() => {
+        console.log(curr);
+        console.log(history.location.pathname);
+    }, [curr]);
+
+    const navigation = [
+        { name: 'Home', href: '/home', current: curr === '/home' ? true : false },
+        { name: 'Courses', href: '/courses', current: curr === '/courses' ? true : false },
+        { name: 'Reports', href: '/reports', current: curr === '/reports' ? true : false },
+        { name: 'Lorem', href: '/lorem', current: curr === '/lorem' ? true : false },
+    ]
     return (
         <Disclosure as="nav" className="bg-gray-800">
             {({ open }) => (
@@ -50,7 +59,11 @@ export default function Example() {
                                         {navigation.map((item) => (
                                             <a
                                                 key={item.name}
-                                                href={item.href}
+                                                onClick={() => {
+                                                    history.push(item.href);
+                                                    setCurr(item.href);
+                                                }}
+                                                // href={item.href}
                                                 className={classNames(
                                                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                                     'px-3 py-2 rounded-md text-sm font-medium'
@@ -117,7 +130,11 @@ export default function Example() {
                                             <Menu.Item>
                                                 {({ active }) => (
                                                     <a
-                                                        href="#"
+                                                        onClick={() => {
+                                                            history.push('login');
+                                                            setCurr('/login');
+                                                        }}
+                                                        // href="/login"
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                     >
                                                         Sign out
