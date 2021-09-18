@@ -22,7 +22,7 @@ export default function Navbar() {
         { name: 'Home', href: '/home', current: curr === '/home' ? true : false },
         { name: 'Courses', href: '/courses', current: curr === '/courses' ? true : false },
         { name: 'Reports', href: '/reports', current: curr === '/reports' ? true : false },
-        { name: 'Lorem', href: '/lorem', current: curr === '/lorem' ? true : false },
+        { name: 'Our Team', href: '/team', current: curr === '/team' ? true : false },
     ]
     return (
         <Disclosure as="nav" className="bg-gray-800">
