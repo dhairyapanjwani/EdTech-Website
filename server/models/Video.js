@@ -11,7 +11,10 @@ const videoSchema=mongoose.Schema({
         type:Array,
         default:[],
     },
-    categories:{
+    category:{
+        type:String
+    },
+    quiz:{
         type:Array,
         default:[],
     }
