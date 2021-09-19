@@ -20,10 +20,19 @@ const userSchema=mongoose.Schema({
     password:{
         type:String,
     },
-    quiz:{
-        type:Array,
-        default:[],
+    confirmationCode:{
+        type:String,
+    },
+    status: {
+        type: String, 
+        enum: ['Pending', 'Active'],
+        default: 'Pending'
+    },
+    score:{
+        type:Number,
+        default:0,
     }
+
 },
 { timestamps: true }
 );
