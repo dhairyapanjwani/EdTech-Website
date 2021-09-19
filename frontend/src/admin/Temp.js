@@ -7,7 +7,11 @@ const Temp = (props) => {
 
   console.log(userData);
 
-  return <div>Temp.js</div>;
+  return (
+    <button className="bg-red-500 hover:bg-red-700 p-3">
+      Hover me
+    </button>
+  );
 };
 
 export default Temp;
