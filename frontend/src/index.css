@@ -14,4 +14,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} 
+
+img, video {
+  max-width: 200%;
+  height: auto;
 }

@@ -1,8 +1,9 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useState, useContext } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { BellIcon, MenuIcon, XIcon, SunIcon, MoonIcon } from '@heroicons/react/outline';
 import { useHistory } from 'react-router';
+import { GlobalContext } from '../../GlobalContext';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -22,10 +23,13 @@ export default function Navbar() {
         { name: 'Home', href: '/home', current: curr === '/home' ? true : false },
         { name: 'Courses', href: '/courses', current: curr === '/courses' ? true : false },
         { name: 'Reports', href: '/reports', current: curr === '/reports' ? true : false },
-        { name: 'Lorem', href: '/lorem', current: curr === '/lorem' ? true : false },
+        { name: 'Our Team', href: '/team', current: curr === '/team' ? true : false },
     ]
+
+    const { siteTheme } = useContext(GlobalContext);
+    const [theme, setTheme] = siteTheme;
     return (
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-white-800 dark:bg-gray-800">
             {({ open }) => (
                 <>
                     <div className="max-w-12xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -81,8 +85,24 @@ export default function Navbar() {
                                     type="button"
                                     className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                 >
-                                    <span className="sr-only">View notifications</span>
-                                    <BellIcon className="h-6 w-6" aria-hidden="true" />
+                                    {/* <span className="sr-only">View notifications</span>
+                                    <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
+                                    {theme === true ? (<>
+                                    <span className="sr-only">Switch Theme</span>
+                                    <MoonIcon className="h-6 w-6" aria-hidden="true" onClick={() => {
+                                        localStorage.setItem('edtech-theme', false);
+                                        setTheme(false);
+                                        // window.location.reload();
+                                    }}/>
+                                    </>) : (<>
+                                        <span className="sr-only">Switch Theme</span>
+                                    <SunIcon className="h-6 w-6" aria-hidden="true" onClick={() => {
+                                        localStorage.setItem('edtech-theme', true);
+                                        setTheme(true);
+                                        // window.location.reload();
+                                    }}/>
+                                    </>)
+                                    }
                                 </button>
 
                                 {/* Profile dropdown */}
