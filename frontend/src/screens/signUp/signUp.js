@@ -32,7 +32,7 @@ export default function SignUp() {
   };
 
   return (
-    <div>
+    
       <Container component="main" maxWidth="xs" className={classes.root} className="body1">
         <CssBaseline />
         <div className={classes.paper}>
@@ -92,7 +92,7 @@ export default function SignUp() {
                 <TextField
                   autoComplete="fname"
                   name="firstName"
-                  variant="outlined"
+                  // variant="outlined"
                   required
                   fullWidth
                   id="firstName"
@@ -104,7 +104,7 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  variant="outlined"
+                  // variant="outlined"
                   required
                   fullWidth
                   id="lastName"
@@ -117,7 +117,7 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  variant="outlined"
+                  // variant="outlined"
                   required
                   fullWidth
                   id="email"
@@ -130,7 +130,7 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  variant="outlined"
+                  // variant="outlined"
                   required
                   fullWidth
                   id="mobileNo"
@@ -143,7 +143,7 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  variant="outlined"
+                  // variant="outlined"
                   required
                   fullWidth
                   id="address"
@@ -156,7 +156,7 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  variant="outlined"
+                  // variant="outlined"
                   required
                   fullWidth
                   name="password"
@@ -202,6 +202,6 @@ export default function SignUp() {
 
         </div>
       </Container>
-    </div>
+   
   );
 }

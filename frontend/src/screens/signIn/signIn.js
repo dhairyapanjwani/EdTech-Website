@@ -51,7 +51,7 @@ export default function SignInSide() {
   const classes = useLoginStyles();
   return (
     <div >
-      <Grid container component="main" className={classes.root}  >
+      <Grid container component="main" className={classes.root} className="cont1"  >
         <CssBaseline />
         <Grid item xs={false} sm={4} md={7} lg={8} className={classes.image} />
         <Grid item xs={12} sm={8} md={5} lg={4} component={Paper} elevation={6} square >
@@ -86,7 +86,7 @@ export default function SignInSide() {
             </Typography>
             <form className={classes.form} onSubmit={handleSubmit} >
               <TextField
-                variant="outlined"
+                // variant="outlined"
                 margin="normal"
                 required
                 fullWidth
@@ -98,7 +98,7 @@ export default function SignInSide() {
                 onChange={handleChange}
               />
               <TextField
-                variant="outlined"
+                // variant="outlined"
                 margin="normal"
                 required
                 fullWidth
