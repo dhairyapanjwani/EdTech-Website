@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { SearchIcon } from '@heroicons/react/outline';
 
+import { GlobalContext } from '../../GlobalContext';
 import Navbar from '../../components/navbar/Navbar';
 import CourseCard from '../../components/card/CourseCard';
 import CoursesSelect from '../../components/select/CoursesSelect';
@@ -8,8 +9,15 @@ import CoursesSelect from '../../components/select/CoursesSelect';
 import CourseApi from '../../util/CourseApi';
 
 const Courses = props => {
-    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    CourseApi.allCourses();
+    const { courseAll } = useContext(GlobalContext);
+    const [allCourses, setAllCourses] = courseAll;
+    useEffect(() => {
+        const fetcher = async () => {
+            const data = await CourseApi.allCourses();
+            setAllCourses(data.data.courses);
+        };
+        fetcher();
+    }, []);
     return(
         <div className="bg-gray-50 dark:bg-gray-800">
             <Navbar />
@@ -26,8 +34,8 @@ const Courses = props => {
             <section className='text-gray-600 body-font'>
                 <div className="container px-5 mx-auto">
                     <div className="flex flex-wrap -m-4">
-                        {arr.map(elem => (
-                            <CourseCard key={elem} className=""/>
+                        {allCourses.map(elem => (
+                            <CourseCard key={elem} course={elem}/>
                         ))}
                     </div>
                 </div>
