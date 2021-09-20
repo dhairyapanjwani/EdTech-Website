@@ -13,6 +13,8 @@ export const GlobalProvider = (props) => {
     name: "ReactJS",
     avatar: reactPng,
   });
+  const [allCourses, setAllCourses] = useState([]);
+
   useEffect(() => {
     console.log(theme);
     console.log(localStorage.getItem("edtech-theme"));
@@ -28,12 +30,17 @@ export const GlobalProvider = (props) => {
   useEffect(() => {
     console.log(courseSelect);
   }, [courseSelect]);
+
+  useEffect(() => {
+    console.log(allCourses);
+  }, [allCourses]);
   return (
     <GlobalContext.Provider
       value={{
         user: [userData, setUserData],
         siteTheme: [theme, setTheme],
         courseSelection: [courseSelect, setCourseSelect],
+        courseAll: [allCourses, setAllCourses],
       }}
     >
       {props.children}
