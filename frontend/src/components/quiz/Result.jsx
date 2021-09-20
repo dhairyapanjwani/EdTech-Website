@@ -10,7 +10,7 @@ const Result = props => {
     var result = 0;
     // DISPLAY SINGLE QS INSIDE OF A li tag //
 const data = props.answers.map((elem) => <li key={elem.questionNo}>
-    <div className='Result-block'>
+    <div className='Result-block bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-200'>
         <div className='Result-block__elem--qs'>
             Q{elem.questionNo+1}. {quiz.questions[elem.questionNo].question}
         </div>

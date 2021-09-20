@@ -4,7 +4,7 @@ import './Rules.css';
 // COMPONENT TO EXPLAIN QUIZ RULES //
 const Rules = (props) => {
     return (
-        <div className='Rules-block' style={{marginTop: '90px'}}>
+        <div className='Rules-block bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-200' style={{marginTop: '90px'}}>
             <h2 style={{textTransform: 'uppercase', letterSpacing: 6, textAlign: 'center'}}>Student Evaluation {props.title}</h2>
             <hr />
             <ul>

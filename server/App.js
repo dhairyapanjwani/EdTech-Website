@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/api/uploads/videos', express.static('uploads/videos'));
 app.use('/api/uploads/thumbnails', express.static('uploads/thumbnails'));
 app.use('/api/uploads/attachments', express.static('uploads/attachments'));
+app.use('/api/uploads/cover', express.static('uploads/cover'));
 
 // // Routes
 
@@ -34,6 +35,7 @@ app.use('/api/signIn', require('./routes/signIn'));
 app.use('/api/upload', require('./routes/upload'));
 app.use('/api/video', require('./routes/video'));
 app.use('/api/user', require('./routes/user'));
-app.use('/api/payment',require('./router/payment'));
+app.use('/api/payment',require('./routes/payment'));
+app.use('/api/course',require('./routes/course'));
 
 module.exports = app;
