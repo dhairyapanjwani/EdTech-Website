@@ -28,7 +28,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "concurrently \"craco start\" \"cd .. && cd server && node server.js\"",
+    "start": "concurrently \"craco start\" \"cd .. && cd server && nodemon server.js\"",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
