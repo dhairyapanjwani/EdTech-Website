@@ -8,6 +8,7 @@ import Courses from "./screens/courses/Courses";
 import Team from "./screens/team/Team";
 import Example from "../src/leaderBoard/leader.js";
 import QuestionCard from "./components/quiz/QuestionCard";
+import UploadScore from "./admin/screens/upload/UploadCourse";
 
 const Routes = (props) => {
   const history = createBrowserHistory();
@@ -23,6 +24,7 @@ const Routes = (props) => {
         <Route path="/team" component={Team} exact />
         <Route path="/leaderBoard" component={Example} exact />
         <Route path="/test" component={QuestionCard} exact />
+        <Route path="/admin/upload/course" component={UploadScore} exact />
       </Switch>
     </BrowserRouter>
   );

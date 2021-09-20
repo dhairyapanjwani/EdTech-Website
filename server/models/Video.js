@@ -7,17 +7,9 @@ const videoSchema=mongoose.Schema({
     video_name:{type:String,default:""},
     thumbnail_name:{type:String,default:""},
     attachment_name:{type:String,default:""},
-    comments:{
-        type:Array,
-        default:[],
-    },
-    category:{
-        type:String
-    },
-    quiz:{
-        type:Array,
-        default:[],
-    }
+    views:{type:Number,defaulr:0},
+    comments:{type:Array,default:[],},
+    courseId:{type:String,},   
 },
 { timestamps: true }
 );

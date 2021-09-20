@@ -34,6 +34,7 @@ app.use('/api/signIn', require('./routes/signIn'));
 app.use('/api/upload', require('./routes/upload'));
 app.use('/api/video', require('./routes/video'));
 app.use('/api/user', require('./routes/user'));
-app.use('/api/payment',require('./router/payment'));
+app.use('/api/payment',require('./routes/payment'));
+app.use('/api/course',require('./routes/course'));
 
 module.exports = app;
