@@ -5,8 +5,11 @@ import Navbar from '../../components/navbar/Navbar';
 import CourseCard from '../../components/card/CourseCard';
 import CoursesSelect from '../../components/select/CoursesSelect';
 
+import CourseApi from '../../util/CourseApi';
+
 const Courses = props => {
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    CourseApi.allCourses();
     return(
         <div className="bg-gray-50 dark:bg-gray-800">
             <Navbar />
