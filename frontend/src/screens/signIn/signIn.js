@@ -50,7 +50,7 @@ export default function SignInSide() {
 
   const classes = useLoginStyles();
   return (
-    <div >
+    <div className="bg-white-800 dark: bg-gray-800">
       <Grid container component="main" className={classes.root} className="cont1"  >
         <CssBaseline />
         <Grid item xs={false} sm={4} md={7} lg={8} className={classes.image} />

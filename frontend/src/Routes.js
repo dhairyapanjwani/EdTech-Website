@@ -6,7 +6,7 @@ import SignUp from "./screens/signUp/signUp";
 import Home from "./screens/home/Home";
 import Courses from "./screens/courses/Courses";
 import Team from "./screens/team/Team";
-
+import Example from "../src/leaderBoard/leader.js"
 const Routes = (props) => {
   const history = createBrowserHistory();
 
@@ -19,6 +19,9 @@ const Routes = (props) => {
         <Route path="/home" component={Home} exact />
         <Route path="/courses" component={Courses} exact />
         <Route path="/team" component={Team} exact />
+        <Route path="/leaderBoard" component={Example} exact/>
+
+        
       </Switch>
     </BrowserRouter>
   );
