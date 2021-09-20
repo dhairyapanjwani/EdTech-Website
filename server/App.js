@@ -8,7 +8,8 @@ const config = require('./config/default');
 
 // const checkAuth = require('./middleware/check-auth');
 
-mongoose.connect(`mongodb+srv://admin:${config.mpass}@cluster0.lodd5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
+mongoose.connect(`mongodb+srv://admin:${config.mpass}@cluster0.lodd5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+);
 mongoose.Promise=global.Promise;
 
 
@@ -19,12 +20,20 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 // To make uploads folder publically available with '/api/videos' route
-//app.use('/api/videos', express.static('media/uploads'));
+app.use('/api/uploads/videos', express.static('uploads/videos'));
+app.use('/api/uploads/thumbnails', express.static('uploads/thumbnails'));
+app.use('/api/uploads/attachments', express.static('uploads/attachments'));
 
 // // Routes
-// app.use('/api/signIn', require('./routes/signIn'));
-// app.use('/api/signUp', require('./routes/signUp'));
+
+app.use('/api/signUp', require('./routes/signUp'));
+app.use('/api/auth/confirm',require('./routes/confirmCode'));
+app.use('/api/v1/auth/google',require('./routes/authApi'));
+app.use('/api/signIn', require('./routes/signIn'));
+
 app.use('/api/upload', require('./routes/upload'));
-//app.use('/api/videoList', require('./routes/videoList'));
+app.use('/api/video', require('./routes/video'));
+app.use('/api/user', require('./routes/user'));
+app.use('/api/payment',require('./router/payment'));
 
 module.exports = app;
