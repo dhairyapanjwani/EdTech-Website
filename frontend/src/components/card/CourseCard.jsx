@@ -15,7 +15,7 @@ const CourseCard = props => {
   }, []);
     return (
             <div class="p-4 md:w-1/3">
-              <div class="h-full border-2 border-gray-200 dark:border-gray-600 border-opacity-60 rounded-lg overflow-hidden">
+              <div class="h-full bg-gray-100 rounded-lg overflow-hidden dark:bg-gray-800 border-2 dark:border-gray-600">
                 <img class="lg:h-48 md:h-36 w-full object-cover object-center" src={img} alt="blog" />
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">{category}</h2>
