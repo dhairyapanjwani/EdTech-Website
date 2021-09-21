@@ -22,7 +22,7 @@ const Routes = (props) => {
         <Route path="/register" component={SignUp} exact />
         <Route path="/home" component={Home} exact />
         <Route path="/courses" component={Courses} exact />
-        <Route path="/course/:courseId/quiz" component={Quiz} exact />
+        <Route path="/courses/:courseId/quiz" component={Quiz} exact />
         <Route path="/team" component={Team} exact />
         <Route path="/leaderBoard" component={Example} exact />
         <Route path="/video/:id" component={VideoScreen} exact />
