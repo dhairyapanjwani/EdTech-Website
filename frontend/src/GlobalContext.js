@@ -33,6 +33,12 @@ export const GlobalProvider = (props) => {
 
   useEffect(() => {
     console.log(courseSelect);
+    const arr = [];
+    allCourses.map(
+      (elem) => elem.category === courseSelect.name && arr.push(elem)
+    );
+    console.log(arr);
+    setCourseSearchResult(arr);
   }, [courseSelect]);
 
   useEffect(() => {

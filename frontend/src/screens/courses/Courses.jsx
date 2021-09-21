@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { SearchIcon } from '@heroicons/react/outline';
+import './Courses.css';
 
 import { GlobalContext } from '../../GlobalContext';
 import Navbar from '../../components/navbar/Navbar';
@@ -7,6 +8,7 @@ import CourseCard from '../../components/card/CourseCard';
 import CoursesSelect from '../../components/select/CoursesSelect';
 
 import CourseApi from '../../util/CourseApi';
+import no_data from '../../assets/svgs/no_data.svg';
 
 const Courses = props => {
     const { courseAll, searchCourse, searchCourseResult } = useContext(GlobalContext);
@@ -21,8 +23,9 @@ const Courses = props => {
         };
         fetcher();
     }, []);
+    
     return(
-        <div className="bg-gray-50 dark:bg-gray-800 pb-8">
+        <div className="bg-gray-50 dark:bg-gray-800 pb-8" id="Course-Main-Div">
             <Navbar />
             <div className="m-5 my-8 flex flex-row justify-center">
                 <div className="relative flex flex-wrap items-stretch w-8/12 mr-4">
@@ -37,9 +40,20 @@ const Courses = props => {
             <section className='text-gray-600 body-font'>
                 <div className="container px-5 mx-auto">
                     <div className="flex flex-wrap -m-4">
-                        {courseSearchResult.map(elem => (
-                            <CourseCard key={elem} course={elem}/>
-                        ))}
+                        {courseSearchResult.length === 0 ? (
+                            <div className="text-4xl flex justify-center align-center text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 my-auto mx-auto p-4" id="Course-Sub-Div">
+                                <div className="flex flex-row justify-center align-center space-x-12 flex-wrap">
+                                    <img src={no_data} width={500} />
+                                    <div className="justify-center my-auto">
+                                        Oops! No Courses available at the moment.
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            courseSearchResult.map(elem => (
+                                <CourseCard key={elem} course={elem}/>
+                            ))
+                        )}
                     </div>
                 </div>
             </section>
