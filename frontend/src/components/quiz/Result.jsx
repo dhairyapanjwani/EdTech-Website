@@ -10,7 +10,7 @@ const Result = props => {
     var result = 0;
     // DISPLAY SINGLE QS INSIDE OF A li tag //
 const data = props.answers.map((elem) => <li key={elem.questionNo}>
-    <div className='Result-block bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-200'>
+    <div className='Result-block bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-200 border-2 border-gray-200 dark:border-gray-600 border-opacity-60 rounded-lg p-2'>
         <div className='Result-block__elem--qs'>
             Q{elem.questionNo+1}. {quiz.questions[elem.questionNo].question}
         </div>
@@ -54,7 +54,7 @@ const data = props.answers.map((elem) => <li key={elem.questionNo}>
     resultCalculate();
 
     return (
-        <div style={{textAlign: 'center',margin: 'auto',width: '80%'}}>
+        <div style={{textAlign: 'center',margin: 'auto',width: '80%', marginTop: 12}}>
             <div className='Result-block--result'>
                 <p>
                     Result Summary
@@ -66,9 +66,9 @@ const data = props.answers.map((elem) => <li key={elem.questionNo}>
                     Result: {result} / {props.answers.length}
                 </p>
             </div>
-            <div style={{textAlign: 'center',margin: 'auto'}}>
-                <h2 style={{textTransform: 'uppercase', letterSpacing: 6}}>Pie Analysis</h2>
-                    <p>{result*100/props.answers.length}% success!</p>
+            <div style={{textAlign: 'center',margin: 'auto'}} className="py-4">
+                <h2 style={{textTransform: 'uppercase', letterSpacing: 6}} className="my-2">Pie Analysis</h2>
+                    <p className="my-2">{result*100/props.answers.length}% success!</p>
                 <CircularProgress
                     size={240}
                     value={result*12}

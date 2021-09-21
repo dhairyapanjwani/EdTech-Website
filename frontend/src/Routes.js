@@ -8,7 +8,7 @@ import Courses from "./screens/courses/Courses";
 import Team from "./screens/team/Team";
 import VideoScreen from "./screens/video/VideoScreen";
 import Example from "../src/leaderBoard/leader.js";
-import QuestionCard from "./components/quiz/QuestionCard";
+import Quiz from "./screens/quiz/Quiz";
 import UploadScore from "./admin/screens/upload/UploadCourse";
 
 const Routes = (props) => {
@@ -22,9 +22,9 @@ const Routes = (props) => {
         <Route path="/register" component={SignUp} exact />
         <Route path="/home" component={Home} exact />
         <Route path="/courses" component={Courses} exact />
+        <Route path="/course/:courseId/quiz" component={Quiz} exact />
         <Route path="/team" component={Team} exact />
         <Route path="/leaderBoard" component={Example} exact />
-        <Route path="/test" component={QuestionCard} exact />
         <Route path="/video/:id" component={VideoScreen} exact />
         <Route path="/admin/upload/course" component={UploadScore} exact />
       </Switch>
