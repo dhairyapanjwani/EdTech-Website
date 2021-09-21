@@ -22,7 +22,7 @@ const Courses = props => {
         fetcher();
     }, []);
     return(
-        <div className="bg-gray-50 dark:bg-gray-800">
+        <div className="bg-gray-50 dark:bg-gray-800 pb-8">
             <Navbar />
             <div className="m-5 my-8 flex flex-row justify-center">
                 <div className="relative flex flex-wrap items-stretch w-8/12 mr-4">

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
 import Navbar from '../../components/navbar/Navbar';
 import VideoRowCard from '../../components/card/VideoRowCard';
 
