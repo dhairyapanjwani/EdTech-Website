@@ -3,7 +3,7 @@ import React from "react";
 function Index() {
     return (
         <>
-            <div class="container flex flex-wrap pt-4 pb-10 m-auto mt-6 md:mt-15 lg:px-12 xl:px-16 my-10">
+            <div class="container flex flex-wrap pt-4 pb-10 m-auto mt-6 md:mt-15 lg:px-12 xl:px-16 ">
                 <div class="w-full px-0 lg:px-4">
                     {/* <h2 class="px-12 text-base font-bold text-center md:text-2xl text-blue-700">
                         Choose your plan
@@ -39,9 +39,9 @@ function Index() {
                           
                         </div>
 
-                        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+                        <div class="w-full p-4 md:w-1/2 lg:w-1/4 flex-wrap">
                             <label class="flex flex-col rounded-lg shadow-lg relative cursor-pointer hover:shadow-2xl">
-                                <div class="w-full px-4 py-8 rounded-t-lg bg-indigo-500">
+                                <div class="w-full px-4 py-6 rounded-t-lg bg-indigo-500">
                                     <h3 class="mx-auto text-base font-semibold text-center underline text-white ">
                                        Rohit
                                     </h3>
@@ -71,7 +71,7 @@ function Index() {
                            
                         </div>
                         
-                        <div class="w-full p-4 md:w-1/2 lg:w-1/4 plan-card">
+                        <div class="w-full p-4 md:w-1/2 lg:w-1/4 plan-card flex-wrap">
                             <label class="flex flex-col rounded-lg shadow-lg group card-group relative hover:bg-jblue-secondary cursor-pointer hover:shadow-2xl">
                                 <div class="w-full px-4 py-6 rounded-t-lg card-section-1 bg-indigo-500">
                                     <h3 class="mx-auto text-base font-semibold text-center underline text-white">

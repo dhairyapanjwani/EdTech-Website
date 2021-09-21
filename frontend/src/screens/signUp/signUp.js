@@ -29,6 +29,8 @@ export default function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     validate(vals, setWarn);
+    
+    console.log(vals);
   };
 
   return (

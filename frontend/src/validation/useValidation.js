@@ -35,7 +35,7 @@ function useValidation() {
     setErr({ fname:fn, lname:ln, email:e, num:no, password:p, address:ad })
 
     if (fn + ln + e + no + p + ad === 0) {
-      axios.post('http://localhost:9000/register', {
+      axios.post('http://localhost:3001/api/signUp', {
         firstName,
         lastName, 
         email, 
@@ -43,8 +43,12 @@ function useValidation() {
         password, 
         address, 
         role
-      }).then((res) => setWarn(res.data.msg));
+      }).then((res) => setWarn(res.data.msg))
+      .catch((err) =>{
+          console.log(err);
+        });
     } 
+   
   };
 
   return [err,validate]

@@ -12,7 +12,6 @@ mongoose.connect(`mongodb+srv://admin:${config.mpass}@cluster0.lodd5.mongodb.net
 );
 mongoose.Promise=global.Promise;
 
-
 app.use(morgan('dev'));
 app.use(cors());
 app.use(bodyParser.json());
