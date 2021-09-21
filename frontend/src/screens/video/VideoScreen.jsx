@@ -37,14 +37,55 @@ function VideoScreen() {
                         </span>
                         
                     </div>
-                    <p class="leading-relaxed px-12 pt-2 mb-10 dark:text-gray-400">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+
+                    <p class="leading-relaxed px-12 pt-2 mb-2 dark:text-gray-400">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+
+                    <div class="width-full bg-gray-700 h-px my-4 mx-12"></div>
+
+                    <div class="mx-12 flex justify-between">
+                        
+                        <div class="flex w-full items-center">
+                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 dark:border-white border-gray-900">
+                                <img src="https://images.unsplash.com/photo-1610397095767-84a5b4736cbd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" class="w-full h-full object-cover"/>
+                            </div>
+                            <div>
+                            <h1 class="title-font ml-2 text-2xl font-medium text-gray-900 dark:text-gray-100  ">ReactJS for beginners</h1>
+                            <div class="ml-2 mt-1">
+                            <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                                <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>1.2K
+                            </span>
+                            <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>3
+                            </span>
+                            </div>
+                            </div>
+                        </div>
+                        <button 
+                                type="button" 
+                                class="px-4 py-3 bg-indigo-500 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform  flex w-1/3 h-1/3"
+                            >
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                <span class="">Study material</span>
+                        </button>
+                    </div>
+
+                    <div class="width-full bg-gray-600 h-px my-4 mx-12"></div>
+
+                    <div className="relative flex flex-wrap items-stretch w-full mr-4 px-12">
+                        <input type="text" placeholder="Add a public comment..." className="px-3 py-3 placeholder-blueGray-300 text-gray-600 relative bg-white bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300 rounded text-md border border-blueGray-300 outline-none focus:outline-none focus:ring w-full pl-10"/>
+                    </div>
                 </div>
 
                 {/* video list */}
                 <div className="flex-none w-1/3">
                     <div class="pt-8">
                         <div class="flex justify-between">
-                            <h1 class="title-font text-2xl font-medium text-gray-900 dark:text-gray-100  w-7/12">Getting started with ReactJS</h1>
+                            <h1 class="title-font text-2xl font-medium text-gray-900 dark:text-gray-100  w-7/12">ReactJS for beginners</h1>
                             <div>
                             <button 
                                 type="button" 
