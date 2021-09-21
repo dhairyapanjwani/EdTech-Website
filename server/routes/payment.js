@@ -1,6 +1,5 @@
 const RAZORPAY_KEY_ID = "rzp_test_CYQ81y4KZJOjlT"
 const RAZORPAY_SECRET = "lgSfaQdWD6Wj7crkyql8Tjr2"
-const Post=require('../models/Post');
 const User=require('../models/User');
 
 const express = require("express");

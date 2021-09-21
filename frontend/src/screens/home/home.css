@@ -1,0 +1,16 @@
+.img-container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+.button-styles {
+    
+    background-color: transparent;
+    
+    text-align: center;
+    border-radius: 50px;
+  }
+.testimonals-bg{
+    background-color: #f5f5f5;
+}
