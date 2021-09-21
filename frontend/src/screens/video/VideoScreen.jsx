@@ -16,8 +16,8 @@ function VideoScreen() {
                         width="100%"
                         height="100%"
                         url='http://localhost:3001/api/uploads/videos/big_buck_bunny_720p_1mb.mp4'
-                        // playing
-                        // controls 
+                        playing
+                        controls 
                         />
                     </div>
                     <div class="flex pt-2 px-12">
@@ -76,8 +76,12 @@ function VideoScreen() {
 
                     <div class="width-full bg-gray-600 h-px my-4 mx-12"></div>
 
-                    <div className="relative flex flex-wrap items-stretch w-full mr-4 px-12">
-                        <input type="text" placeholder="Add a public comment..." className="px-3 py-3 placeholder-blueGray-300 text-gray-600 relative bg-white bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300 rounded text-md border border-blueGray-300 outline-none focus:outline-none focus:ring w-full pl-10"/>
+                    <div class="px-12">
+                        <div className="relative flex flex-wrap items-stretch my-4 w-full mr-4 ">
+                            <input type="text" placeholder="Add a public comment..." className="px-3 py-3 placeholder-blueGray-300 text-gray-600 relative bg-white bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300 rounded text-md border border-blueGray-300 outline-none focus:outline-none focus:ring w-full pl-10"/>
+                        </div>
+                        <div></div>
+
                     </div>
                 </div>
 
