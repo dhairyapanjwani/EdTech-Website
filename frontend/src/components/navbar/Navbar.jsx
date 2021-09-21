@@ -88,19 +88,19 @@ export default function Navbar() {
                                     {/* <span className="sr-only">View notifications</span>
                                     <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
                                     {theme === true ? (<>
-                                    <span className="sr-only bg-indigo-600">Switch Theme</span>
-                                    <MoonIcon className="h-6 w-6 bg-indigo-600" aria-hidden="true" onClick={() => {
-                                        localStorage.setItem('edtech-theme', false);
-                                        setTheme(false);
-                                        // window.location.reload();
-                                    }}/>
+                                        <span className="sr-only bg-indigo-600">Switch Theme</span>
+                                        <MoonIcon className="h-6 w-6 bg-indigo-600" aria-hidden="true" onClick={() => {
+                                            localStorage.setItem('edtech-theme', false);
+                                            setTheme(false);
+                                            // window.location.reload();
+                                        }} />
                                     </>) : (<>
                                         <span className="sr-only bg-indigo-600">Switch Theme</span>
-                                    <SunIcon className="h-6 w-6 bg-indigo-600" aria-hidden="true" onClick={() => {
-                                        localStorage.setItem('edtech-theme', true);
-                                        setTheme(true);
-                                        // window.location.reload();
-                                    }}/>
+                                        <SunIcon className="h-6 w-6 bg-indigo-600" aria-hidden="true" onClick={() => {
+                                            localStorage.setItem('edtech-theme', true);
+                                            setTheme(true);
+                                            // window.location.reload();
+                                        }} />
                                     </>)
                                     }
                                 </button>
