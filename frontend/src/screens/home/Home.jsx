@@ -4,6 +4,7 @@ import Navbar from '../../components/navbar/Navbar';
 import './home.css';
 // import video from './live_background.mp4'
 import home_illustrations from './a1.svg'
+import { Button } from 'react-bootstrap';
 
 const Home = () => {
     return (
@@ -21,11 +22,15 @@ const Home = () => {
                 <h1 class="sm:text-3xl text-2xl font-medium title-font text-black font-bold dark:text-white">The world's largest selection of courses</h1>
                 </div>
                 </div>
-                    <button class=" button-styles flex lg:w-70 mx-auto mt-6 mb-6 text-gray-800 py-2 px-12 border-gray-500 border-2 focus:outline-none hover:bg-gray-300 text-lg dark:text-gray-300 dark:hover:bg-gray-600">Browse Courses</button>
+                    <Button href="/courses" className="button-styles flex lg:w-70 mx-auto mt-6 mb-6 text-gray-800 py-2 px-12 border-gray-500 border-2 focus:outline-none hover:bg-gray-300 text-lg dark:text-gray-300 dark:hover:bg-gray-600">Browse Courses</Button>
+                    {/* <button className="button-styles flex lg:w-70 mx-auto mt-6 mb-6 text-gray-800 py-2 px-12 border-gray-500 border-2 focus:outline-none hover:bg-gray-300 text-lg dark:text-gray-300 dark:hover:bg-gray-600">Browse Courses</button> */}
                 </div>
             </div>
 
-            <div className="border-b-2 border-dashed border-indigo-500" ></div>            
+            <section class="text-gray-600 body-font">
+                <div class="container px-5 mx-auto flex items-center lg:w-3/5 mx-auto border-b-2 pb-10 border-gray-300 sm:flex-row flex-col"></div>
+            </section>
+
             <section class="text-gray-600 body-font">
                 <div class="container px-5 py-10 mx-auto">
                     <div class="flex flex-col text-center w-full mb-20">
@@ -36,7 +41,7 @@ const Home = () => {
                     <div class="p-4 md:w-1/3">
                         <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
                         <div class="flex items-center mb-3">
-                            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-blue-500 text-white flex-shrink-0">
+                            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                                 <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                             </svg>
@@ -56,7 +61,7 @@ const Home = () => {
                     <div class="p-4 md:w-1/3">
                         <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
                         <div class="flex items-center mb-3">
-                            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-blue-500 text-white flex-shrink-0">
+                            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                                 <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
                                 <circle cx="12" cy="7" r="4"></circle>
@@ -77,7 +82,7 @@ const Home = () => {
                     <div class="p-4 md:w-1/3">
                         <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
                         <div class="flex items-center mb-3">
-                            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-blue-500 text-white flex-shrink-0">
+                            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                                 <circle cx="6" cy="6" r="3"></circle>
                                 <circle cx="6" cy="18" r="3"></circle>
@@ -96,7 +101,8 @@ const Home = () => {
                         </div>
                         </div>
                     </div>
-                    <button class=" button-styles flex lg:w-70 mx-auto mt-6 mb-16 text-gray-800 py-2 px-12 border-gray-500 border-2 focus:outline-none text-lg hover:bg-gray-300 text-lg dark:text-gray-300 dark:hover:bg-gray-600">View more courses</button>
+                    {/* <button class=" button-styles flex lg:w-70 mx-auto mt-6 mb-16 text-gray-800 py-2 px-12 border-gray-500 border-2 focus:outline-none text-lg hover:bg-gray-300 text-lg dark:text-gray-300 dark:hover:bg-gray-600">View more courses</button> */}
+                    <Button href="/courses" className="button-styles1 flex lg:w-70 mx-auto mt-6 mb-6 text-gray-800 py-2 px-12 border-gray-500 border-2 focus:outline-none hover:bg-gray-300 text-lg dark:text-gray-300 dark:hover:bg-gray-600">View more courses</Button>
                     </div>
                     
                     
