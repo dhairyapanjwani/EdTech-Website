@@ -69,13 +69,8 @@ export default function Navbar() {
                                                 }}
                                                 // href={item.href}
                                                 className={classNames(
-<<<<<<< HEAD
-                                                    item.current ? 'border-b-2 border-white text-white' : 'text-gray-300 hover:border-b-2 hover:border-white hover:text-white',
-                                                    'px-3 py-2 rounded-md text-sm font-medium cursor-pointer'
-=======
                                                     item.current ? 'border-b-2 border-white text-white font-bold' : 'text-gray-300 hover:border-b-2 hover:border-white hover:text-white',
                                                     'px-3 py-2 rounded-md text-sm font-bold'
->>>>>>> 6cbb9055def97a5229952d85e8321153f4c020b6
                                                 )}
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
