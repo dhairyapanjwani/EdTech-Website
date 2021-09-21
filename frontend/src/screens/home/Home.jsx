@@ -38,69 +38,91 @@ const Home = () => {
                     <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 dark:text-gray-100">Explore a variety of courses and gain new skills</h1>
                     </div>
                     <div class="flex flex-wrap -m-4">
-                    <div class="p-4 md:w-1/3">
-                        <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-                        <div class="flex items-center mb-3">
-                            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                            </svg>
+                    
+                        <div class="p-4 md:w-1/3">
+                            <div class="h-full bg-gray-100 rounded-lg overflow-hidden">
+                                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="" alt="blog" />
+                                <div class="p-6">
+                                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">category{}</h2>
+                                    <h1 class="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">title{}</h1>
+                                    <p class="leading-relaxed mb-3 dark:text-gray-500">description{}</p>
+                                    <div class="flex items-center flex-wrap ">
+                                        <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5l7 7-7 7"></path>
+                                        </svg>
+                                        </a>
+                                        <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                                        <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>1.2K
+                                        </span>
+                                        <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>{}
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                            <h2 class="text-gray-900 text-lg title-font font-medium">Shooting Stars</h2>
                         </div>
-                        <div class="flex-grow">
-                            <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-                            <a class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                            </a>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="p-4 md:w-1/3">
-                        <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-                        <div class="flex items-center mb-3">
-                            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
+                        <div class="p-4 md:w-1/3">
+                            <div class="h-full bg-gray-100 rounded-lg overflow-hidden">
+                                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="" alt="blog" />
+                                <div class="p-6">
+                                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">category{}</h2>
+                                    <h1 class="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">title{}</h1>
+                                    <p class="leading-relaxed mb-3 dark:text-gray-500">description{}</p>
+                                    <div class="flex items-center flex-wrap ">
+                                        <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5l7 7-7 7"></path>
+                                        </svg>
+                                        </a>
+                                        <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                                        <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>1.2K
+                                        </span>
+                                        <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>{}
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                            <h2 class="text-gray-900 text-lg title-font font-medium">The Catalyzer</h2>
                         </div>
-                        <div class="flex-grow">
-                            <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-                            <a class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                            </a>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="p-4 md:w-1/3">
-                        <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-                        <div class="flex items-center mb-3">
-                            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                <circle cx="6" cy="6" r="3"></circle>
-                                <circle cx="6" cy="18" r="3"></circle>
-                                <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-                            </svg>
+
+                        <div class="p-4 md:w-1/3">
+                            <div class="h-full bg-gray-100 rounded-lg overflow-hidden">
+                                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="" alt="blog" />
+                                <div class="p-6">
+                                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">category{}</h2>
+                                    <h1 class="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">title{}</h1>
+                                    <p class="leading-relaxed mb-3 dark:text-gray-500">description{}</p>
+                                    <div class="flex items-center flex-wrap ">
+                                        <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5l7 7-7 7"></path>
+                                        </svg>
+                                        </a>
+                                        <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                                        <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>1.2K
+                                        </span>
+                                        <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>{}
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                            <h2 class="text-gray-900 text-lg title-font font-medium">Neptune</h2>
                         </div>
-                        <div class="flex-grow">
-                            <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-                            <a class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                            </a>
-                        </div>
-                        </div>
-                    </div>
+                    
+                    
                     {/* <button class=" button-styles flex lg:w-70 mx-auto mt-6 mb-16 text-gray-800 py-2 px-12 border-gray-500 border-2 focus:outline-none text-lg hover:bg-gray-300 text-lg dark:text-gray-300 dark:hover:bg-gray-600">View more courses</button> */}
                     <Button href="/courses" className="button-styles1 flex lg:w-70 mx-auto mt-6 mb-6 text-gray-800 py-2 px-12 border-gray-500 border-2 focus:outline-none hover:bg-gray-300 text-lg dark:text-gray-300 dark:hover:bg-gray-600">View more courses</Button>
                     </div>
