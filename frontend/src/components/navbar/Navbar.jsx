@@ -69,8 +69,13 @@ export default function Navbar() {
                                                 }}
                                                 // href={item.href}
                                                 className={classNames(
+<<<<<<< HEAD
                                                     item.current ? 'border-b-2 border-white text-white' : 'text-gray-300 hover:border-b-2 hover:border-white hover:text-white',
                                                     'px-3 py-2 rounded-md text-sm font-medium cursor-pointer'
+=======
+                                                    item.current ? 'border-b-2 border-white text-white font-bold' : 'text-gray-300 hover:border-b-2 hover:border-white hover:text-white',
+                                                    'px-3 py-2 rounded-md text-sm font-bold'
+>>>>>>> 6cbb9055def97a5229952d85e8321153f4c020b6
                                                 )}
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
@@ -126,12 +131,12 @@ export default function Navbar() {
                                         leaveFrom="transform opacity-100 scale-100"
                                         leaveTo="transform opacity-0 scale-95"
                                     >
-                                        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-gray-700 ring-1 ring-black ring-opacity-5 focus:outline-none">
                                             <Menu.Item>
                                                 {({ active }) => (
                                                     <a
                                                         href="#"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:bg-gray-600')}
                                                     >
                                                         Your Profile
                                                     </a>
@@ -141,7 +146,7 @@ export default function Navbar() {
                                                 {({ active }) => (
                                                     <a
                                                         href="#"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:bg-gray-600')}
                                                     >
                                                         Settings
                                                     </a>
@@ -155,7 +160,7 @@ export default function Navbar() {
                                                             setCurr('/login');
                                                         }}
                                                         // href="/login"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:bg-gray-600')}
                                                     >
                                                         Sign out
                                                     </a>

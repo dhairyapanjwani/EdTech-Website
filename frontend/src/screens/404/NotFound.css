@@ -1,0 +1,10 @@
+#NF-Main-Block {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+}
+
+#NF-img {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}

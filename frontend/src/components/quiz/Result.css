@@ -13,9 +13,9 @@ li {
 }
 
 .Result-block {
-  width: 70%;
+  width: 50%;
   margin: 20px auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   text-align: left;
 }
 
@@ -40,7 +40,7 @@ li {
   border: 1px var(--primaryColor) solid;
   border-radius: 10px;
   width: 70%;
-  margin: 75px auto 20px auto;
+  margin: 25px auto -12px auto;
 }
 
 @media (max-width: 768px) {
