@@ -39,12 +39,17 @@ export default function SignInSide() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:9000/login', {
+
+    axios.post('http://localhost:3001/api/signIn', {
       email,
       password
     }).then((res) => {
+      console.log(res);
       setRes(res.data.details);
       setWarn(res.data.msg);
+    })
+    .catch((err) =>{
+      console.log(err);
     });
   };
 

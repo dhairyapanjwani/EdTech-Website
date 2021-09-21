@@ -1,31 +1,33 @@
 import React, { Component, createContext } from 'react';
 import Index from "./topper.jsx";
+import Navbar from '../../src/components/navbar/Navbar.jsx';
+import lead from "../assets/images/lead.jpg";
 import "./lead.css";
 
 const leader=[{
     rank:1,
-    Name:"Rohit",
+    Name:"Bhagavatiraj Yadav",
+    Username:"bhags15",
+    Points:"900",
+    HighestPoints:"2000"
+},
+{
+    rank:2,
+    Name:"Rohit Sharma",
     Username:"Imro45",
     Points:"900",
     HighestPoints:"2000"
 },
 {
     rank:1,
-    Name:"Rohit",
+    Name:"Virat Kohli",
     Username:"Imro45",
     Points:"900",
     HighestPoints:"2000"
 },
 {
     rank:1,
-    Name:"Rohit",
-    Username:"Imro45",
-    Points:"900",
-    HighestPoints:"2000"
-},
-{
-    rank:1,
-    Name:"Rohit",
+    Name:"AB DeVilliers",
     Username:"Imro45",
     Points:"900",
     HighestPoints:"2000"
@@ -34,33 +36,34 @@ const leader=[{
 ];
 export default function Example() {
     return (
-        <div className="bg-white-800">
+        <div className="bg-gray-50 dark:bg-gray-800">
+            <Navbar/>
             <Index />
-            <div class="flex items-center justify-center min-h-screen bg-white-800" >
+            <div class="flex items-center font-normal justify-center bg-white-800" >
                 <div class="col-span-12">
                     <div class="overflow-auto lg:overflow-visible">
                         <div class="flex lg:justify-between border-b-2 border-fuchsia-900 pb-1">
-                            <h2 class="text-2xl text-gray-500 font-bold bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 sm rounded-full">Leader Board</h2>
+                            <h2 class="text-2xl font-bold bg-indigo-500 hover:bg-blue-700 text-white py-1 px-3 sm rounded-full">Leader Board</h2>
                             
 
                             <div>
                                 <a href="#">
                                     <button
-                                        class="bg-blue-500 hover:bg-blue-700  text-white  py-1  px-3 sm  rounded-full"
+                                        class="bg-indigo-500 hover:bg-blue-700  text-white  py-1  px-3 sm  rounded-full"
                                     >
                                         All
                                     </button>
                                 </a>
                                 <a href="#">
                                     <button
-                                        class=" bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 sm rounded-full"
+                                        class=" bg-indigo-500 hover:bg-blue-700 text-white py-1 px-3 sm rounded-full"
                                     >
                                         Admin
                                     </button>
                                 </a>
                                 <a href="#">
                                     <button
-                                        class=" bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 sm rounded-full"
+                                        class=" bg-indigo-500 hover:bg-blue-700 text-white py-1 px-3 sm rounded-full"
                                     >
                                         User
                                     </button></a
@@ -68,7 +71,7 @@ export default function Example() {
                             </div>
                         </div>
                         <table class="table text-gray-400 border-separate space-y-6 text-sm">
-                            <thead class="bg-blue-500 text-white">
+                            <thead class="bg-indigo-500 text-white">
                                 <tr>
                                     <th class="p-3">#Rank</th>
                                     <th class="p-3 text-left">Name</th>
