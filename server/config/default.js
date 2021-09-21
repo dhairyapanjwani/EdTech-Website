@@ -1,6 +1,6 @@
 const config = {
   secret: '',
-  port: 5000,
+  port: 3001,
   mpass:'ylBghQenCjnFuUFK',
   epass:'thunDer@1234'
 }
