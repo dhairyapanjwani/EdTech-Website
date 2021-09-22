@@ -55,6 +55,17 @@ router.get("/:category",async (req, res) => {
   })
   })
 
+  router.get("/single/:id",async (req, res) => {
+
+    Course.findById(req.params.id,(err,result)=>{
+      if(err){
+        res.status(500).json(err);
+      }
+      console.log(result)
+      res.status(200).json({message:"success",course:result});
+  })
+  })
+
 
 
 module.exports=router;

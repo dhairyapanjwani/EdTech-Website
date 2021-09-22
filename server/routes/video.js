@@ -12,9 +12,9 @@ router.get("/all",async (req, res) => {
   })
 })
 
-router.get("/category/:category",async (req, res) => {
+router.get("/course/:id",async (req, res) => {
 
-    Video.find({'category':req.params.category},(err,result)=>{
+    Video.find({'courseId':req.params.id},(err,result)=>{
       if(err){
         res.status(500).json(err);
       }
@@ -77,4 +77,5 @@ router.put("/comment", async (req, res,next) => {
     }
   });
 
+  
 module.exports=router;
