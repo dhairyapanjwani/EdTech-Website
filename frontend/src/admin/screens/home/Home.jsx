@@ -5,13 +5,13 @@ export default function Example() {
     const history = useHistory();
     return (        
       <>
-        <div className="bg-gray-50 dark:bg-gray-800">
+        <div className="bg-gray-100 dark:bg-gray-800">
         
         <div className="text-indigo-500 text-md pl-12 pt-8 mb-4" onClick={() => history.goBack()}>
             <i class="fas fa-arrow-left"></i> Back
         </div>
-          <div className="md:grid md:grid-cols-2 md:gap-6 px-20">
-            
+          <div className="md:grid md:grid-cols-2 md:gap-6 px-40">            
+          <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 dark:text-gray-100">Upload a new Video</h1>
             <div className="mt-5 md:mt-0 md:col-span-2">
               <form action="#" method="POST">
                 <div className="shadow sm:rounded-md sm:overflow-hidden">

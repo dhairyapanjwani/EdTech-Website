@@ -19,9 +19,13 @@ export default function Navbar() {
         console.log(history.location.pathname);
     }, [curr]);
 
+    // const navigation = [
+    //     { name: 'Video Upload', href: '/videoUpload', current: curr === '/videoUpload' ? true : false },
+    //     { name: 'Course Upload', href: '/courseUpload', current: curr === '/courseUpload' ? true : false },        
+    // ]
     const navigation = [
-        { name: 'Video Upload', href: '/videoUpload', current: curr === '/videoUpload' ? true : false },
-        { name: 'Course Upload', href: '/courseUpload', current: curr === '/courseUpload' ? true : false },        
+        { name: 'Upload Video ', href: '/admin', current: curr === '/admin' ? true : false },
+        { name: 'Upload Course ', href: '/admin/upload_course', current: curr === '/admin/upload_course' ? true : false },        
     ]
 
     const { siteTheme } = useContext(GlobalContext);
