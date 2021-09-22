@@ -33,7 +33,6 @@ const Routes = (props) => {
         <Route path="/team" component={Team} exact />
         <Route path="/leaderBoard" component={Example} exact />
 
-        <Route path="/test" component={QuestionCard} exact />
         <Route path="/courses/:id" component={CourseOverview} exact />
         <Route path="/video/:id" component={VideoScreen} exact />
         <Route path="/admin/upload/course" component={UploadCourse} exact />

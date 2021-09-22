@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useEffect, useState, useContext } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { BellIcon, MenuIcon, XIcon, SunIcon, MoonIcon } from '@heroicons/react/outline';
+import { BellIcon, MenuIcon, XIcon, SunIcon, MoonIcon, ShoppingCartIcon } from '@heroicons/react/outline';
 import { useHistory } from 'react-router';
 import { GlobalContext } from '../../GlobalContext';
 
@@ -81,6 +81,12 @@ export default function Navbar() {
                                 </div>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                            <button
+                                    type="button"
+                                    className="p-1.5 rounded-full text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-0.5 focus:ring-offset-gray-800 focus:ring-white bg-indigo-600 mr-2"
+                                >
+                                    <ShoppingCartIcon className="h-6 w-6 bg-indigo-600"/>    
+                                </button>
                                 <button
                                     type="button"
                                     className="p-1.5 rounded-full text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-0.5 focus:ring-offset-gray-800 focus:ring-white bg-indigo-600"
@@ -108,13 +114,14 @@ export default function Navbar() {
                                 {/* Profile dropdown */}
                                 <Menu as="div" className="ml-3 relative">
                                     <div>
-                                        <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                        <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white bg-indigo-600 p-2">
                                             <span className="sr-only">Open user menu</span>
                                             <img
-                                                className="h-9 w-9 rounded-full"
+                                                className="h-6 w-6 rounded-full"
                                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                                 alt=""
                                             />
+                                            <div className="text-gray-50 text-base ml-2 font-bold">Pravin Mehta</div>
                                         </Menu.Button>
                                     </div>
                                     <Transition

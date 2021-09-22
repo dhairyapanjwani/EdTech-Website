@@ -2,7 +2,8 @@ import React,{useState,useEffect,useRef} from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import VideoStepCard from '../../components/card/VideoStepCard';
 import './CourseOverview.css'
-import Axios from 'axios'
+import Axios from 'axios';
+import { useHistory, useParams } from 'react-router-dom';
 
 
 function CourseOverview({match}) {
@@ -45,6 +46,8 @@ function CourseOverview({match}) {
 
     const scrollRef = useRef(null)
     const executeScroll = () => scrollRef.current.scrollIntoView()
+    const history = useHistory();
+    const param = useParams();
     return (
         <div className="bg-gray-50 dark:bg-gray-800 ">
             <Navbar/>
@@ -140,7 +143,7 @@ function CourseOverview({match}) {
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                         </svg>
                     </div>
-                    <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                    <div class="flex-grow sm:pl-6 mt-6 sm:mt-0" onClick={() => history.push(`${param.id}/quiz`)}>
                     <a class="text-indigo-500 inline-flex items-center mt-4 md:mb-2 lg:mb-0">Start Quiz
                       <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M5 12h14"></path>
