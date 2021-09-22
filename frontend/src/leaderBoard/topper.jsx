@@ -3,7 +3,7 @@ import React from "react";
 function Index() {
     return (
         <>
-            <div class="container flex flex-wrap pt-4 pb-10 m-auto mt-6 md:mt-15 lg:px-12 xl:px-16 ">
+            <div class="container flex flex-wrap pt-4 pb-10 m-auto mt-6 md:mt-15 lg:px-12 xl:px-16">
                 <div class="w-full px-0 lg:px-4">
                     {/* <h2 class="px-12 text-base font-bold text-center md:text-2xl text-blue-700">
                         Choose your plan

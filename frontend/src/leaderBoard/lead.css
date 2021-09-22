@@ -27,3 +27,7 @@ tr th:nth-child(1) {
   border-radius: 0.625rem 0 0 0.625rem;
 }
 
+.tab1{
+  position:absolute;
+  top:500px;
+}
