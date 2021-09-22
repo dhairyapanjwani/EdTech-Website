@@ -11,10 +11,9 @@ import Example from "../src/leaderBoard/leader.js";
 import Quiz from "./screens/quiz/Quiz";
 import UploadScore from "./admin/screens/upload/UploadCourse";
 import AdminLogin from "./admin/screens/login/AdminLogin";
-import Edit from "./admin/screens/edit/Edit";
 import NotFound from "./screens/404/NotFound";
 import Reports from "./screens/report/Reports";
-import UploadCourse from "./admin/screens/upload/UploadCourse";
+import UploadCourse from "./admin/screens/upload_course/UploadCourse";
 import CourseOverview from "./screens/courses/CourseOverview";
 import QuestionCard from "./components/quiz/QuestionCard";
 
@@ -35,9 +34,8 @@ const Routes = (props) => {
 
         <Route path="/courses/:id" component={CourseOverview} exact />
         <Route path="/video/:id" component={VideoScreen} exact />
-        <Route path="/admin/upload/course" component={UploadCourse} exact />
+        <Route path="/admin/upload_course" component={UploadCourse} exact />
         <Route path="/adminlogin" component={AdminLogin} exact />
-        <Route path="/admin/edit" component={Edit} exact />
         <Route path="/reports" component={Reports} exact />
         <Route path="/" component={NotFound} />
       </Switch>
