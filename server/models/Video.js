@@ -6,7 +6,6 @@ const videoSchema=mongoose.Schema({
     description:{type:String},
     video_name:{type:String,default:""},
     thumbnail_name:{type:String,default:""},
-    attachment_name:{type:String,default:""},
     views:{type:Number,default:0},
     comments:{type:Array,default:[],},
     courseId:{type:String,},   

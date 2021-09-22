@@ -30,6 +30,7 @@ app.use('/api/signUp', require('./routes/signUp'));
 app.use('/api/auth/confirm',require('./routes/confirmCode'));
 app.use('/api/v1/auth/google',require('./routes/authApi'));
 app.use('/api/signIn', require('./routes/signIn'));
+app.use('/api/course', require('./routes/course'));
 
 app.use('/api/upload', require('./routes/upload'));
 app.use('/api/video', require('./routes/video'));
