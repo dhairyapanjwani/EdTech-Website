@@ -11,7 +11,7 @@ router.put("/addscore", async (req, res) => {
   const course_name=req.body.course_name;
   const category_name=req.body.category_name;
     User.findById(userId,function (err, result) {
-        result.results.push({courseId:courseId,score:score,course_name:course_name,category_name:category_name,time:Date.now()})
+        result.results.push({courseId:courseId,score:score,course_name:course_name,category_name:category_name,date:'22/09/2021',high:Math.floor(Math.random() * (100 - 97 + 1) + 97),low:Math.floor(Math.random() * (25 - 20 + 1) + 20),avg:Math.floor(Math.random() * (60 - 50 + 1) + 50)})
         result.markModified('results');
         result.save()
         .then(()=>{

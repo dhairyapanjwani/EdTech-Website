@@ -9,6 +9,8 @@ const courseSchema=mongoose.Schema({
     category:{type:String,default:""},
     quiz:{type:Array,default:[]},
     results:{type:Array,default:[]},
+    amount:{type:Number,default:0},
+    attachment_name:{type:String,default:""},
 },
 { timestamps: true }
 );

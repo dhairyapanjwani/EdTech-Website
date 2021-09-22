@@ -4,7 +4,7 @@ import Navbar from '../../components/navbar/Navbar';
 import VideoRowCard from '../../components/card/VideoRowCard';
 import Comment from '../../components/comment/Comment';
 
-function VideoScreen() {
+function VideoScreen({match}) {
     const videoId=""
     return (
         <div className="bg-gray-50 dark:bg-gray-800">
@@ -15,9 +15,11 @@ function VideoScreen() {
                     <div className="px-12 pt-8">
                         <ReactPlayer 
                         width="100%"
-                        height="100%"
+                        height="360px"
                         url='http://localhost:3001/api/uploads/videos/big_buck_bunny_720p_1mb.mp4'
-                        playing
+                        //playing
+                        light={`http://localhost:3001/api/uploads/thumbnails/1.jpg`}
+                        
                         controls 
                         />
                     </div>
