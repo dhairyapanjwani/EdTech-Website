@@ -27,7 +27,6 @@ const Routes = (props) => {
         <Route path="/admin" component={Temp} exact />
         <Route path="/login" component={SignInSide} exact />
         <Route path="/register" component={SignUp} exact />
-        <Route path="/home" component={Home} exact />
         <Route path="/courses" component={Courses} exact />
         <Route path="/courses/:courseId/quiz" component={Quiz} exact />
         <Route path="/team" component={Team} exact />
@@ -38,7 +37,8 @@ const Routes = (props) => {
         <Route path="/admin/upload_course" component={UploadCourse} exact />
         <Route path="/adminlogin" component={AdminLogin} exact />
         <Route path="/reports" component={Reports} exact />
-        <Route path="/" component={NotFound} />
+        <Route path="/" component={Home} exact />
+        <Route path="/:anything" component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
