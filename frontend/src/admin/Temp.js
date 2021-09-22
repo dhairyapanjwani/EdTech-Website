@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
+import Navbar from "../components/navbar/Navbar";
 import { GlobalContext } from "../GlobalContext";
+import Home from "./screens/home/Home";
 
 const Temp = (props) => {
   const { user } = useContext(GlobalContext);
@@ -8,9 +10,11 @@ const Temp = (props) => {
   console.log(userData);
 
   return (
-    <button className="bg-red-500 hover:bg-red-700 p-3">
-      Hover me
-    </button>
+    <div className="bg-gray-50 dark:bg-gray-800" >
+      <Navbar/>
+      <Home/>
+      
+    </div>
   );
 };
 

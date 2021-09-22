@@ -10,6 +10,8 @@ import VideoScreen from "./screens/video/VideoScreen";
 import Example from "../src/leaderBoard/leader.js";
 import Quiz from "./screens/quiz/Quiz";
 import UploadScore from "./admin/screens/upload/UploadCourse";
+import AdminLogin from "./admin/screens/login/AdminLogin";
+import Edit from "./admin/screens/edit/Edit";
 import NotFound from "./screens/404/NotFound";
 
 const Routes = (props) => {
@@ -28,6 +30,8 @@ const Routes = (props) => {
         <Route path="/leaderBoard" component={Example} exact />
         <Route path="/video/:id" component={VideoScreen} exact />
         <Route path="/admin/upload/course" component={UploadScore} exact />
+        <Route path="/adminlogin" component={AdminLogin} exact />
+        <Route path="/admin/edit" component={Edit} exact />
         <Route path="/" component={NotFound} />
       </Switch>
     </BrowserRouter>

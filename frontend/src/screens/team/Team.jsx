@@ -1,5 +1,5 @@
 import React from 'react';
-import './team.css';
+import './Team.css';
 import Navbar from '../../components/navbar/Navbar';
 
 const Team = () => {
