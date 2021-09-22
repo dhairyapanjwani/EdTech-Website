@@ -20,8 +20,8 @@ export default function Navbar() {
     }, [curr]);
 
     const navigation = [
-        { name: 'Home', href: '/home', current: curr === '/home' ? true : false },
         { name: 'Courses', href: '/courses', current: curr === '/courses' ? true : false },
+        { name: 'CodeEditor', href: '/editor', current: curr === '/editor' ? true : false },
         { name: 'Reports', href: '/reports', current: curr === '/reports' ? true : false },
         { name: 'Our Team', href: '/team', current: curr === '/team' ? true : false },
     ]

@@ -14,6 +14,10 @@ const CourseApi = {
     console.log(`http://localhost:3001/api/uploads/cover/${name}`);
     return data;
   },
+  getLiked: async (userId) => {
+    const data = await axios.get(`${url}/getliked/${userId}`);
+    return data;
+  },
 };
 
 export default CourseApi;

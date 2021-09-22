@@ -1,37 +1,54 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { Avatar, Button, CssBaseline, TextField, Grid, Typography, Container, Radio, RadioGroup, FormControl, FormLabel, FormControlLabel } from '@material-ui/core';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import useRegisterStyles from './registerStyles';
-import useValidation from '../../validation/useValidation';
+import React, { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
+import {
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  Grid,
+  Typography,
+  Container,
+  Radio,
+  RadioGroup,
+  FormControl,
+  FormLabel,
+  FormControlLabel,
+} from "@material-ui/core";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import useRegisterStyles from "./registerStyles";
+import useValidation from "../../validation/useValidation";
 import "./register.css";
 import register from "../../assets/images/register.png";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
-
-
-
-
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.min.js";
 
 export default function SignUp() {
   const history = useHistory();
   const [isChecked, setChecked] = useState({ value: true, initial: true });
-  const [warn, setWarn] = useState('');
-  let initVals = { firstName: '', lastName: '', email: '', mobileNo: '', password: '', address: '', role: '' };
+  const [warn, setWarn] = useState("");
+  let initVals = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    mobileNo: "",
+    password: "",
+    address: "",
+    role: "",
+  };
   const [vals, setVal] = useState(initVals);
 
   const [err, validate] = useValidation();
 
   useEffect(() => {
-    if (warn === 'Registered Successfully') history.push('/login');
-  }, [warn])
+    if (warn === "Registered Successfully") history.push("/login");
+  }, [warn]);
   const classes = useRegisterStyles();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === 'role') setChecked(prev => !prev);
-    setVal({ ...vals, [name]: value })
-  }
+    if (name === "role") setChecked((prev) => !prev);
+    setVal({ ...vals, [name]: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,15 +58,16 @@ export default function SignUp() {
   };
 
   return (
-
-
     <div className="container-fluid bg-light">
       <div className="row">
         <div className="col-4">
-          <Container >
+          <Container>
             <CssBaseline />
             <div className={classes.paper}>
-              <Avatar className={classes.avatar} style={{ backgroundColor: '#6366f1', color: '#FFFFFF' }}>
+              <Avatar
+                className={classes.avatar}
+                style={{ backgroundColor: "#6366f1", color: "#FFFFFF" }}
+              >
                 <LockOutlinedIcon />
               </Avatar>
               <Typography component="h1" variant="h5">
@@ -60,12 +78,23 @@ export default function SignUp() {
               </Typography>
               <form className={classes.form} onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
-                  <Typography component="h6" variant="h6" className={warn !== '' ? classes.show : classes.hidden}>
+                  <Typography
+                    component="h6"
+                    variant="h6"
+                    className={warn !== "" ? classes.show : classes.hidden}
+                  >
                     {warn}
                   </Typography>
                   <FormControl component="fieldset">
-                    <FormLabel component="legend">&nbsp;&nbsp;&nbsp;&nbsp;Role</FormLabel>
-                    <RadioGroup row aria-label="role" name="role" defaultValue="start">
+                    <FormLabel component="legend">
+                      &nbsp;&nbsp;&nbsp;&nbsp;Role
+                    </FormLabel>
+                    <RadioGroup
+                      row
+                      aria-label="role"
+                      name="role"
+                      defaultValue="start"
+                    >
                       <FormControlLabel
                         value="student"
                         control={<Radio color="primary" />}
@@ -172,20 +201,19 @@ export default function SignUp() {
                   type="submit"
                   fullWidth
                   variant="contained"
-                  style={{ backgroundColor: '#6366f1', color: '#FFFFFF' }}
+                  style={{ backgroundColor: "#6366f1", color: "#FFFFFF" }}
                   className={classes.submit}
                 >
                   Sign Up
                 </Button>
                 <Grid container justify="flex-end">
-                  <Grid item >
-                    <Link to="/login" variant="body2"  >
+                  <Grid item>
+                    <Link to="/login" variant="body2">
                       Already have an account? Sign in
                     </Link>
                   </Grid>
                 </Grid>
               </form>
-
             </div>
           </Container>
         </div>
@@ -193,11 +221,8 @@ export default function SignUp() {
           <figure>
             <img src={register} alt="SignIn picture" />
           </figure>
-
         </div>
       </div>
-
-
 
       {/* <Container component="main" maxWidth="xs" className={classes.root} className="body1">
         <CssBaseline />
