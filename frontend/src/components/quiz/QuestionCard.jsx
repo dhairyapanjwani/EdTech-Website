@@ -39,10 +39,10 @@ const QuestionCard = (props) => {
         );
     }
     return (
-        <div style={{textAlign: 'center',margin: 'auto',marginBottom: '50px'}} className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-200">
+        <div style={{textAlign: 'center',margin: 'auto'}} className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-200">
         <Rules title={props.title} />
         
-        <div className='QuestionCard-block bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-200'>
+        <div className='QuestionCard-block bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-200 border-2 border-gray-200 dark:border-gray-600 border-opacity-60 rounded-lg p-2'> 
             <form onSubmit={(e) => {
                 e.preventDefault();
                 setI(i+1);

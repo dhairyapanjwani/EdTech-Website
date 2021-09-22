@@ -1,7 +1,6 @@
 import React, { Component, createContext } from 'react';
 import Index from "./topper.jsx";
 import Navbar from '../../src/components/navbar/Navbar.jsx';
-import lead from "../assets/images/lead.jpg";
 import "./lead.css";
 
 const leader=[{
@@ -34,6 +33,7 @@ const leader=[{
 },
 
 ];
+// className="tab1"
 export default function Example() {
     return (
         <div className="bg-gray-50 dark:bg-gray-800">
@@ -42,8 +42,8 @@ export default function Example() {
             <div class="flex items-center font-normal justify-center bg-white-800" >
                 <div class="col-span-12">
                     <div class="overflow-auto lg:overflow-visible">
-                        <div class="flex lg:justify-between border-b-2 border-fuchsia-900 pb-1">
-                            <h2 class="text-2xl font-bold bg-indigo-500 hover:bg-blue-700 text-white py-1 px-3 sm rounded-full">Leader Board</h2>
+                        <div className="tab1" >
+                            {/* <h2 class="text-2xl font-bold bg-indigo-500 hover:bg-blue-700 text-white py-1 px-3 sm rounded-full">Leader Board</h2>
                             
 
                             <div>
@@ -68,7 +68,7 @@ export default function Example() {
                                         User
                                     </button></a
                                 >
-                            </div>
+                            </div> */}
                         </div>
                         <table class="table text-gray-400 border-separate space-y-6 text-sm">
                             <thead class="bg-indigo-500 text-white">
