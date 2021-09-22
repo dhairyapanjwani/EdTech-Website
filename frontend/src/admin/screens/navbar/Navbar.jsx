@@ -1,9 +1,9 @@
-/* This example requires Tailwind CSS v2.0+ */
+
 import { Fragment, useEffect, useState, useContext } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { BellIcon, MenuIcon, XIcon, SunIcon, MoonIcon, ShoppingCartIcon } from '@heroicons/react/outline';
+import { BellIcon, MenuIcon, XIcon, SunIcon, MoonIcon } from '@heroicons/react/outline';
 import { useHistory } from 'react-router';
-import { GlobalContext } from '../../GlobalContext';
+import { GlobalContext } from '../../../GlobalContext';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -19,11 +19,13 @@ export default function Navbar() {
         console.log(history.location.pathname);
     }, [curr]);
 
+    // const navigation = [
+    //     { name: 'Video Upload', href: '/videoUpload', current: curr === '/videoUpload' ? true : false },
+    //     { name: 'Course Upload', href: '/courseUpload', current: curr === '/courseUpload' ? true : false },        
+    // ]
     const navigation = [
-        { name: 'Home', href: '/home', current: curr === '/home' ? true : false },
-        { name: 'Courses', href: '/courses', current: curr === '/courses' ? true : false },
-        { name: 'Reports', href: '/reports', current: curr === '/reports' ? true : false },
-        { name: 'Our Team', href: '/team', current: curr === '/team' ? true : false },
+        { name: 'Upload Video ', href: '/admin', current: curr === '/admin' ? true : false },
+        { name: 'Upload Course ', href: '/admin/upload_course', current: curr === '/admin/upload_course' ? true : false },        
     ]
 
     const { siteTheme } = useContext(GlobalContext);
@@ -81,18 +83,10 @@ export default function Navbar() {
                                 </div>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                            <button
-                                    type="button"
-                                    className="p-1.5 rounded-full text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-0.5 focus:ring-offset-gray-800 focus:ring-white bg-indigo-600 mr-2"
-                                >
-                                    <ShoppingCartIcon className="h-6 w-6 bg-indigo-600"/>    
-                                </button>
                                 <button
                                     type="button"
                                     className="p-1.5 rounded-full text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-0.5 focus:ring-offset-gray-800 focus:ring-white bg-indigo-600"
                                 >
-                                    {/* <span className="sr-only">View notifications</span>
-                                    <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
                                     {theme === true ? (<>
                                         <span className="sr-only bg-indigo-600">Switch Theme</span>
                                         <MoonIcon className="h-6 w-6 bg-indigo-600" aria-hidden="true" onClick={() => {
@@ -114,14 +108,13 @@ export default function Navbar() {
                                 {/* Profile dropdown */}
                                 <Menu as="div" className="ml-3 relative">
                                     <div>
-                                        <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white bg-indigo-600 p-2">
+                                        <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                             <span className="sr-only">Open user menu</span>
                                             <img
-                                                className="h-6 w-6 rounded-full"
+                                                className="h-9 w-9 rounded-full"
                                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                                 alt=""
                                             />
-                                            <div className="text-gray-50 text-base ml-2 font-bold">Pravin Mehta</div>
                                         </Menu.Button>
                                     </div>
                                     <Transition
@@ -134,26 +127,6 @@ export default function Navbar() {
                                         leaveTo="transform opacity-0 scale-95"
                                     >
                                         <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-gray-700 ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                            <Menu.Item>
-                                                {({ active }) => (
-                                                    <a
-                                                        href="#"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:bg-gray-600')}
-                                                    >
-                                                        Your Profile
-                                                    </a>
-                                                )}
-                                            </Menu.Item>
-                                            <Menu.Item>
-                                                {({ active }) => (
-                                                    <a
-                                                        href="#"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:bg-gray-600')}
-                                                    >
-                                                        Settings
-                                                    </a>
-                                                )}
-                                            </Menu.Item>
                                             <Menu.Item>
                                                 {({ active }) => (
                                                     <a

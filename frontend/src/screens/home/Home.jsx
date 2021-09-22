@@ -1,9 +1,10 @@
 import React from 'react';
 import Navbar from '../../components/navbar/Navbar';
-import './home.css';
+import './Home.css';
 import home_illustrations from './a1.svg';
 import course_img from './course_img.jpg';
 import { Link } from 'react-router-dom';
+
 
 const Home = () => {
     return (

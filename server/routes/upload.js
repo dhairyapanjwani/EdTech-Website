@@ -93,32 +93,6 @@ router.post("/thumbnail",upload2.single("thumbnailFile"), async (req, res) => {
     
 });
 
-router.post("/attachment",upload3.single("attachmentFile"), async (req, res) => {
 
-  console.log(req.file.path)
-
-  Video.findById(req.body.videoId,function (err, result) {
-  result.attachment_name=date+"_attachment_"+req.body.attachment_name
-  result.markModified('attachment_name');
-  result
-  .save()
-  .then(()=>{
-    console.log("success")
-  })
-  .catch((err)=>{
-    console.log(err)
-    
-  })
-  
-}
-)
-.catch((err)=>{
-  console.log(err)
-  res.status(500).json({
-    message:"failure"
-  })
-})
-  
-});
 
 module.exports = router;
