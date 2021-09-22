@@ -1,0 +1,9 @@
+.set_height{
+    height: calc(100vh - 4rem);
+}
+.set_opacity{
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,1)75%);
+}
+.set_margin{
+    height: calc(100vh - 4rem - 230px);
+}

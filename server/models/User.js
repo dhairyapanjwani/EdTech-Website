@@ -28,9 +28,9 @@ const userSchema=mongoose.Schema({
         enum: ['Pending', 'Active'],
         default: 'Pending'
     },
-    score:{
-        type:Number,
-        default:0,
+    results:{
+        type:Array,
+        default:[],
     },
     enrolled:{
         type: Array,

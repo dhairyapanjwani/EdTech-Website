@@ -35,7 +35,7 @@ export default function SignUp() {
 
   return (
     
-      <Container component="main" maxWidth="xs" className={classes.root} className="body1 bg-white-800 dark: bg-gray-800">
+      <Container component="main" maxWidth="xs" className={classes.root} className="body1">
         <CssBaseline />
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
