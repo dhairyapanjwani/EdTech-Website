@@ -12,6 +12,10 @@ import Quiz from "./screens/quiz/Quiz";
 import UploadScore from "./admin/screens/upload/UploadCourse";
 import NotFound from "./screens/404/NotFound";
 import Reports from "./screens/report/Reports";
+import UploadCourse from "./admin/screens/upload/UploadCourse";
+import CourseOverview from "./screens/courses/CourseOverview";
+import QuestionCard from "./components/quiz/QuestionCard";
+import NotFound from "./screens/404/NotFound";
 
 const Routes = (props) => {
   const history = createBrowserHistory();
@@ -27,6 +31,9 @@ const Routes = (props) => {
         <Route path="/courses/:courseId/quiz" component={Quiz} exact />
         <Route path="/team" component={Team} exact />
         <Route path="/leaderBoard" component={Example} exact />
+
+        <Route path="/test" component={QuestionCard} exact />
+        <Route path="/course/:id" component={CourseOverview} exact />
         <Route path="/video/:id" component={VideoScreen} exact />
         <Route path="/admin/upload/course" component={UploadScore} exact />
         <Route path="/reports" component={Reports} exact />
