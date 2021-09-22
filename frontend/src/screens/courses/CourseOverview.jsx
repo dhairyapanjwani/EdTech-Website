@@ -54,11 +54,57 @@ function CourseOverview() {
             <p class="leading-relaxed text-sm  pt-1  dark:text-gray-400">Get this course @ just Rs. 999/-</p>
             </div>
             <div class="container px-5 py-24 mx-auto flex flex-wrap">
+            <div class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
+            <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+                <div class="h-full w-1 bg-gray-800 dark:bg-gray-600 pointer-events-none"></div>
+                </div>
+                <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm">1</div>
+                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row"></div>
+                    <div class="">
+                    <div class="flex-shrink-0 w-24 h-24 bg-gray-700 text-indigo-400 rounded-full inline-flex items-center justify-center">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                    <a class="text-indigo-500 inline-flex items-center mt-4 md:mb-2 lg:mb-0">Study Material
+                      <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                    <p class="leading-relaxed text-sm  pt-1 pr-96  dark:text-gray-400">This study material will act your guide throughout this course</p>
+                    </div>
+                    </div>
+    </div>
                 <VideoStepCard/>
                 <VideoStepCard/>
                 <VideoStepCard/>
                 <VideoStepCard/>
                 <VideoStepCard/>
+                <div class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
+            <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+                <div class="h-full w-1 bg-gray-800 dark:bg-gray-600 pointer-events-none"></div>
+                </div>
+                <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm">1</div>
+                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row"></div>
+                    <div class="">
+                    <div class="flex-shrink-0 w-24 h-24 bg-gray-700 text-indigo-400 rounded-full inline-flex items-center justify-center">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                    <a class="text-indigo-500 inline-flex items-center mt-4 md:mb-2 lg:mb-0">Start Quiz
+                      <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                    <p class="leading-relaxed text-sm  pt-1 pr-96  dark:text-gray-400">This quiz will help you test your skills and improve your weak topics </p>
+                    </div>
+                    </div>
+    </div>
             </div>
         </div>
     )
