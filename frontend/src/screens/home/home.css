@@ -4,13 +4,15 @@
     color: white;
   }
   
-.button-styles {
-    
+.button-styles {    
     background-color: transparent;
-    
     text-align: center;
     border-radius: 50px;
+    width:250px;
   }
-.testimonals-bg{
-    background-color: #f5f5f5;
-}
+  .button-styles1 {    
+    background-color: transparent;    
+    text-align: center;
+    border-radius: 50px;
+    width:280px;
+  }

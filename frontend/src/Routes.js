@@ -8,8 +8,9 @@ import Courses from "./screens/courses/Courses";
 import Team from "./screens/team/Team";
 import VideoScreen from "./screens/video/VideoScreen";
 import Example from "../src/leaderBoard/leader.js";
-import QuestionCard from "./components/quiz/QuestionCard";
+import Quiz from "./screens/quiz/Quiz";
 import UploadScore from "./admin/screens/upload/UploadCourse";
+import NotFound from "./screens/404/NotFound";
 
 const Routes = (props) => {
   const history = createBrowserHistory();
@@ -22,11 +23,12 @@ const Routes = (props) => {
         <Route path="/register" component={SignUp} exact />
         <Route path="/home" component={Home} exact />
         <Route path="/courses" component={Courses} exact />
+        <Route path="/courses/:courseId/quiz" component={Quiz} exact />
         <Route path="/team" component={Team} exact />
         <Route path="/leaderBoard" component={Example} exact />
-        <Route path="/test" component={QuestionCard} exact />
         <Route path="/video/:id" component={VideoScreen} exact />
         <Route path="/admin/upload/course" component={UploadScore} exact />
+        <Route path="/" component={NotFound} />
       </Switch>
     </BrowserRouter>
   );

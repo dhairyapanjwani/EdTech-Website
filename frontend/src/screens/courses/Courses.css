@@ -1,0 +1,8 @@
+#Course-Main-Div {
+  min-height: calc(100vh - 80px);
+}
+
+#Course-Sub-Div {
+  position: absolute;
+  top: 25%;
+}
