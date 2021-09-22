@@ -9,7 +9,6 @@ import Team from "./screens/team/Team";
 import VideoScreen from "./screens/video/VideoScreen";
 import Example from "../src/leaderBoard/leader.js";
 import Quiz from "./screens/quiz/Quiz";
-import UploadScore from "./admin/screens/upload/UploadCourse";
 import AdminLogin from "./admin/screens/login/AdminLogin";
 import Edit from "./admin/screens/edit/Edit";
 import NotFound from "./screens/404/NotFound";
@@ -32,7 +31,6 @@ const Routes = (props) => {
         <Route path="/courses/:courseId/quiz" component={Quiz} exact />
         <Route path="/team" component={Team} exact />
         <Route path="/leaderBoard" component={Example} exact />
-
         <Route path="/test" component={QuestionCard} exact />
         <Route path="/courses/:id" component={CourseOverview} exact />
         <Route path="/video/:id" component={VideoScreen} exact />
