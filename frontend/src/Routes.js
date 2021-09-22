@@ -15,7 +15,6 @@ import Reports from "./screens/report/Reports";
 import UploadCourse from "./admin/screens/upload/UploadCourse";
 import CourseOverview from "./screens/courses/CourseOverview";
 import QuestionCard from "./components/quiz/QuestionCard";
-import NotFound from "./screens/404/NotFound";
 
 const Routes = (props) => {
   const history = createBrowserHistory();
