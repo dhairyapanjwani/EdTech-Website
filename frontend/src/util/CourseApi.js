@@ -18,6 +18,13 @@ const CourseApi = {
     const data = await axios.get(`${url}/getliked/${userId}`);
     return data;
   },
+  likeIt: async (userId, courseId) => {
+    const data = await axios.put(`${url}/like`, {
+      userId: userId,
+      courseId: courseId,
+    });
+    return data;
+  },
 };
 
 export default CourseApi;
