@@ -11,6 +11,8 @@ import Example from "../src/leaderBoard/leader.js";
 import Quiz from "./screens/quiz/Quiz";
 import UploadScore from "./admin/screens/upload/UploadCourse";
 import NotFound from "./screens/404/NotFound";
+import CodeEditor from "./screens/CodeEditor.js"
+
 
 const Routes = (props) => {
   const history = createBrowserHistory();
@@ -28,7 +30,9 @@ const Routes = (props) => {
         <Route path="/leaderBoard" component={Example} exact />
         <Route path="/video/:id" component={VideoScreen} exact />
         <Route path="/admin/upload/course" component={UploadScore} exact />
+        <Route path="/editor" exact component={CodeEditor}/>
         <Route path="/" component={NotFound} />
+      
       </Switch>
     </BrowserRouter>
   );

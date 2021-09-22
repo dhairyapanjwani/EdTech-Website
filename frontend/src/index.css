@@ -16,12 +16,18 @@ code {
     monospace;
 }
 
-img,
+/* img,
 video {
   max-width: 200%;
   height: auto;
-}
+} */
 
 a {
   cursor: pointer;
 }
+
+/* *{
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+} */

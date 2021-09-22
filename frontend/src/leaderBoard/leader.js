@@ -2,8 +2,38 @@ import React, { Component, createContext } from 'react';
 import Index from "./topper.jsx";
 import Navbar from '../../src/components/navbar/Navbar.jsx';
 import "./lead.css";
+import Footer from "../components/Footer/Footer.jsx";
 
-const leader=[{
+const leader=[
+    {
+    rank:1,
+    Name:"Bhagavatiraj Yadav",
+    Username:"bhags15",
+    Points:"900",
+    HighestPoints:"2000"
+},
+    {
+    rank:1,
+    Name:"Bhagavatiraj Yadav",
+    Username:"bhags15",
+    Points:"900",
+    HighestPoints:"2000"
+},
+    {
+    rank:1,
+    Name:"Bhagavatiraj Yadav",
+    Username:"bhags15",
+    Points:"900",
+    HighestPoints:"2000"
+},
+    {
+    rank:1,
+    Name:"Bhagavatiraj Yadav",
+    Username:"bhags15",
+    Points:"900",
+    HighestPoints:"2000"
+},
+    {
     rank:1,
     Name:"Bhagavatiraj Yadav",
     Username:"bhags15",
@@ -20,6 +50,34 @@ const leader=[{
 {
     rank:1,
     Name:"Virat Kohli",
+    Username:"Imro45",
+    Points:"900",
+    HighestPoints:"2000"
+},
+{
+    rank:1,
+    Name:"AB DeVilliers",
+    Username:"Imro45",
+    Points:"900",
+    HighestPoints:"2000"
+},
+{
+    rank:1,
+    Name:"AB DeVilliers",
+    Username:"Imro45",
+    Points:"900",
+    HighestPoints:"2000"
+},
+{
+    rank:1,
+    Name:"AB DeVilliers",
+    Username:"Imro45",
+    Points:"900",
+    HighestPoints:"2000"
+},
+{
+    rank:1,
+    Name:"AB DeVilliers",
     Username:"Imro45",
     Points:"900",
     HighestPoints:"2000"
@@ -70,6 +128,7 @@ export default function Example() {
                                 >
                             </div> */}
                         </div>
+                        <div className="mb-28">
                         <table class="table text-gray-400 border-separate space-y-6 text-sm">
                             <thead class="bg-indigo-500 text-white">
                                 <tr>
@@ -101,6 +160,7 @@ export default function Example() {
                                 })}
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>

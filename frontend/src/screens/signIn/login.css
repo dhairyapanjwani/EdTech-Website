@@ -22,4 +22,10 @@
 .cont1{
     position:absolute;
     top:100px;
+    height:90%;
+    right: 10px;
+}
+
+.im1{
+    height:200%;
 }
