@@ -37,12 +37,12 @@ const Routes = (props) => {
         <Route path="/admin/upload_course" component={UploadCourse} exact />
         <Route path="/adminlogin" component={AdminLogin} exact />
         <Route path="/reports" component={Reports} exact />
+        <Route path="/" component={Home} exact />
         <Route path="/" component={NotFound} />      
         <Route path="/editor" exact component={CodeEditor} />
         <Route path="/admin/upload_course" component={UploadCourse} exact />
         <Route path="/adminlogin" component={AdminLogin} exact />
         <Route path="/reports" component={Reports} exact />
-        <Route path="/" component={Home} exact />
         <Route path="/:anything" component={NotFound} />
       </Switch>
     </BrowserRouter>
