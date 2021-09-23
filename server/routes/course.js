@@ -22,7 +22,7 @@ router.post("/upload",upload.single("coverFile"), async (req, res) => {
       title:req.body.title,
       description:req.body.description,
       cover_name:date+"_"+"cover"+"_"+req.body.cover_name,
-      rating:Math.floor(Math.random() * 5) + 1,
+      rating:Math.floor(Math.random() * (5 - 1) + 1),
       category:req.body.category
     });
     newCourse

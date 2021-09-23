@@ -90,11 +90,11 @@ export default function SignInSide() {
       },
     });
     const data = await res.json();
-    setUserData(data.user.user);
-    localStorage.setItem("edtech-user", JSON.stringify(data.user.user));
+    setUserData(data.user);
+    
     if (data.message == "success") {
       window.alert("login success");
-      localStorage.setItem("user", JSON.stringify(data.user));
+      localStorage.setItem("edtech-user", JSON.stringify(data.user));
       history.push("/");
     } else {
       window.alert("Invalid credentials hei");
