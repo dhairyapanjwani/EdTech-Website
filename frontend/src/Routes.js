@@ -12,7 +12,6 @@ import Quiz from "./screens/quiz/Quiz";
 import AdminLogin from "./admin/screens/login/AdminLogin";
 import NotFound from "./screens/404/NotFound";
 import CodeEditor from "./screens/CodeEditor.js"
-import CodeEditor from "./screens/CodeEditor.js";
 
 import Reports from "./screens/report/Reports";
 import UploadCourse from "./admin/screens/upload_course/UploadCourse";
