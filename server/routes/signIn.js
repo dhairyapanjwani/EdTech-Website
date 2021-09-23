@@ -10,20 +10,20 @@ router.post('/',(req,res,next)=>{
     .exec()
     .then(user=>{
         if(user.length<1){
-            return res.status(401).json({
-                message:'Auth Failed'
+            return res.status(200).json({
+                message:'Invalid credentials'
             })
         }else{
             if (user[0].status != "Active") {
-                return res.status(401).send({
+                return res.status(200).send({
                   message: "Please Verify Your Email!",
                 });
               }
             bycrypt.compare(req.body.password,user[0].password,(err,result)=>{
                 if(err){
                     console.log(err)
-                    return res.status(401).json({
-                        message:'Auth Failed'
+                    return res.status(200).json({
+                        message:'Invalid credentials'
                     });
                 }
                 if (result){
@@ -32,8 +32,8 @@ router.post('/',(req,res,next)=>{
                         user:user[0]
                     })
                 }
-                res.status(401).json({
-                    message:'Auth Failed'
+                res.status(200).json({
+                    message:'Invalid credentials'
                 })
             })
         

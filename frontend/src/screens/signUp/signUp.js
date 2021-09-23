@@ -53,7 +53,7 @@ export default function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     validate(vals, setWarn);
-
+    
     console.log(vals);
   };
 
@@ -79,9 +79,6 @@ export default function SignUp() {
               <Typography component="h1" variant="h5">
                 Sign up
               </Typography>
-              {/* <Typography component="h6" variant="h6">
-                or
-              </Typography> */}
               <form className={classes.form} onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
                   <Typography
@@ -91,34 +88,6 @@ export default function SignUp() {
                   >
                     {warn}
                   </Typography>
-                  {/* <FormControl component="fieldset">
-                    <FormLabel component="legend">&nbsp;&nbsp;&nbsp;&nbsp;Role</FormLabel>
-                    <RadioGroup row aria-label="role" name="role" defaultValue="start">
-                      <FormControlLabel
-                        value="student"
-                        control={<Radio color="primary" />}
-                        label="Student"
-                        labelPlacement="start"
-                        checked={isChecked.initial}
-                        onChange={handleChange}
-                      />
-                      <FormControlLabel
-                        value="instructor"
-                        control={<Radio color="primary" />}
-                        label="Instructor"
-                        labelPlacement="start"
-                        onChange={handleChange}
-                      />
-                      <FormControlLabel
-                        value="admin"
-                        control={<Radio color="primary" />}
-                        label="Admin"
-                        labelPlacement="start"
-                        onChange={handleChange}
-                        disabled
-                      />
-                    </RadioGroup>
-                  </FormControl> */}
                   <Grid item xs={12} sm={6}>
                     <TextField
                       autoComplete="fname"

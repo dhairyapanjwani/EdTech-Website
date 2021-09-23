@@ -53,18 +53,45 @@ export default function SignInSide() {
 
     axios
       .post("http://localhost:3001/api/signIn", {
-        email,
-        password,
+        email:email,
+        password:password,
       })
       .then((res) => {
-        console.log(res);
-        setRes(res.data.details);
-        setWarn(res.data.msg);
+        console.log(res.data);
+        if(res.data.message=="Please Verify Your Email!"  || res.data.message=="Invalid credentials"){
+          setWarn(res.data.message);
+        }
+        setRes(res.data.user);
+        
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
+  const handleLogin = async googleData => {
+    const res = await fetch("http://localhost:3001/api/v1/auth/google", {
+        method: "POST",
+        body: JSON.stringify({
+        token: googleData.tokenId
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    const data = await res.json()
+    if(data.message=="success"){
+      window.alert("login success")
+      localStorage.setItem('user',JSON.stringify(data.user))
+      history.push('/')
+    }
+    else{
+
+      window.alert("Invalid credentials hei")
+    }
+    
+    // store returned user somehow
+  }
 
   const classes = useLoginStyles();
   return (
@@ -90,11 +117,11 @@ export default function SignInSide() {
                 </Typography>
                 <br />
                 <GoogleLogin
-                  clientId="184577954974-pe1kq14kr8179el5q0nkkdhcfkk1iq50.apps.googleusercontent.com"
-                  buttonText="SignIn with Google"
-                  onSuccess={responseGoogle}
-                  onFailure={responseGoogle}
-                  cookiePolicy={"single_host_origin"}
+                  clientId="624398540702-hft2l1uf6p82b8u4ui0soag8l7e9mdrq.apps.googleusercontent.com"
+                buttonText="Log in with Google"
+                onSuccess={handleLogin}
+                onFailure={handleLogin}
+                cookiePolicy={'single_host_origin'}
                 />
                 <br />
                 <Typography component="h6" variant="h6">

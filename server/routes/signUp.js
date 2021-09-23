@@ -30,6 +30,8 @@ router.post('/',(req,res,next)=>{
                         first_name:req.body.first_name,
                         last_name:req.body.last_name,
                         email:req.body.email,
+                        address:req.body.address,
+                        phone:req.body.phone,
                         password:hash,
                         confirmationCode: token
                     });
@@ -60,8 +62,8 @@ router.post('/',(req,res,next)=>{
                               </div>`,
                         }).catch(err => console.log(err));
 
-                        res.status(201).json({
-                            message :"User created successfully",
+                        res.status(200).json({
+                            message :"Verify your mail id",
                             user:user
                         })
                     })

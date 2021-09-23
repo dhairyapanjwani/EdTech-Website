@@ -36,14 +36,13 @@ function useValidation() {
 
     if (fn + ln + e + no + p + ad === 0) {
       axios.post('http://localhost:3001/api/signUp', {
-        firstName,
-        lastName, 
-        email, 
-        mobileNo, 
-        password, 
-        address, 
-        role
-      }).then((res) => setWarn(res.data.msg))
+        first_name:firstName,
+        last_name:lastName, 
+        email:email, 
+        phone:mobileNo, 
+        password:password, 
+        address:address
+      }).then((res) => window.alert(res.data.message))
       .catch((err) =>{
           console.log(err);
         });
