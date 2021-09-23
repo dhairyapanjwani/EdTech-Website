@@ -23,7 +23,8 @@ router.post("/", async (req, res) => {
                 email:email,
                 password:"none",
                 status:"Active",
-                confirmationCode:""
+                confirmationCode:"",
+                profile:Math.floor(Math.random() * (11 - 1) + 1).toString()+".jpg",
             });
             user
             .save()

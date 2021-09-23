@@ -35,6 +35,10 @@ const userSchema=mongoose.Schema({
     enrolled:{
         type: Array,
         default: []
+    },
+    profile:{
+        type:String,
+        default:"2.jpg"
     }
 
 },

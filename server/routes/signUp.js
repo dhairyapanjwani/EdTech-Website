@@ -33,7 +33,8 @@ router.post('/',(req,res,next)=>{
                         address:req.body.address,
                         phone:req.body.phone,
                         password:hash,
-                        confirmationCode: token
+                        confirmationCode: token,
+                        profile:Math.floor(Math.random() * (11 - 1) + 1).toString()+".jpg",
                     });
                     user
                     .save()
