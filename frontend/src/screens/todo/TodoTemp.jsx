@@ -56,10 +56,10 @@ function TodoTemp() {
   return (
     <div className="bg-gray-50 dark:bg-gray-800" id="Course-Main-Div">
       <Navbar />
-      <div className="">
-        <header>
+      <div>
+        <div className="todo-header">
           <h1 className="text-gray-900 dark:text-gray-100 text-5xl font-medium title-font mb-10 mt-10 font-extrabold">Todo List </h1>
-        </header>
+        </div>
         <Form 
         inputText={inputText} 
         setInputText={setInputText} 

@@ -4,29 +4,11 @@
     box-sizing: border-box;
   }
     
-  header,
-  form {
+  .todo-header{
     min-height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  form input,
-  form button {
-    padding: 0.5rem;
-    font-size: 2rem;
-    border: none;
-    background: white;
-  }
-  form button {
-    color: #ff6f47;
-    background: #f7fffe;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  form button:hover {
-    background: #ff6f47;
-    color: white;
   }
   .todo-container {
     display: flex;
@@ -111,7 +93,6 @@
     overflow: hidden;
   }
   select {
-    color: #ff6f47;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
     width: 12rem;
@@ -132,7 +113,6 @@
     transform: scale(1.5);
   }
   
-
   .add-icon{
     font-size:40px !important;
     color:white !important;
