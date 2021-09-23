@@ -4,8 +4,8 @@ import Home from "./screens/home/Home";
 import { GlobalContext } from "../GlobalContext";
 
 const Temp = (props) => {
-  const { user } = useContext(GlobalContext);
-  const [userData, setUserData] = user;
+  const { userInfo } = useContext(GlobalContext);
+  const [userData, setUserData] = userInfo;
 
   console.log(userData);
 

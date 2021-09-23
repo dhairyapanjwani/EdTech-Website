@@ -90,11 +90,11 @@ export default function SignInSide() {
       },
     });
     const data = await res.json();
-    setUserData(data.user.user);
-    localStorage.setItem("edtech-user", JSON.stringify(data.user.user));
+    setUserData(data.user);
+    
     if (data.message == "success") {
       window.alert("login success");
-      localStorage.setItem("user", JSON.stringify(data.user));
+      localStorage.setItem("edtech-user", JSON.stringify(data.user));
       history.push("/");
     } else {
       window.alert("Invalid credentials hei");
@@ -106,15 +106,15 @@ export default function SignInSide() {
   const classes = useLoginStyles();
   return (
     <div class="bg-gray-50">
-      <div>
-        <div class="grid grid-cols-3 gap-4">
-          <div class="col-span-2 ">
-            <figure class="mb-25 mt-20">
+      <div class="mb-40">
+        <div class="grid grid-cols-3 gap-4" >
+          <div class="col-span-2 mt-30 grid place-content-center">
+            <figure>
               <img src={signIn} alt="SignIn picture" />
             </figure>
           </div>
-          <div class="bg-gray-50 mb-20 max-w-lg mt-39	">
-            <Grid>
+          <div class="bg-gray-50 max-w-lg mt-35">
+            <Grid >
               <div className={classes.paper}>
                 <Avatar
                   className={classes.avatar}
