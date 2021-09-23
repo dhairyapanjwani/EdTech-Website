@@ -4,6 +4,8 @@ import Navbar from '../../components/navbar/Navbar';
 import ShubhNisar from "../../../src/assets/images/ShubhNisar.jpg";
 import HershVitekar from "../../../src/assets/images/HershVitekar.jpg";
 import KhushbuParmar from "../../../src/assets/images/KhushbuParmar.jpg";
+import BhagavatirajYadav from "../../../src/assets/images/BhagavatirajYadav.jpg";
+import RishabhPatil from "../../../src/assets/images/RishabhPatil.jpg";
 
 const Team = () => {
     return (
@@ -13,13 +15,13 @@ const Team = () => {
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-5 mx-auto">
                     <div className="flex flex-col text-center w-full mb-20">
-                    <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest dark:text-gray-100">OUR TEAM</h1>
+                    <h1 className="text-5xl font-medium title-font mb-4 text-gray-900 tracking-widest dark:text-gray-100 font-extrabold">OUR TEAM</h1>
                     <p className="lg:w-2/3 mx-auto leading-relaxed text-base dark:text-gray-200">Talent wins games, but teamwork and intelligence win championships. Teamwork is the ability to work together toward a common vision.</p>
                     </div>
                     <div className="flex flex-wrap -m-4">
                     <div className="p-4 lg:w-1/2">
                         <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-                        <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://dummyimage.com/200x200"/>
+                        <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src={BhagavatirajYadav}/>
                         <div className="flex-grow sm:pl-8">
                             <h2 className="title-font font-medium text-lg text-gray-900 dark:text-gray-100">Bhagavatiraj Yadav</h2>
                             <h3 className="text-gray-500 mb-3 dark:text-gray-200">FullStack Developer</h3>
@@ -35,7 +37,7 @@ const Team = () => {
                                 <a href="https://www.linkedin.com/in/bhagavatiraj-yadav-a95774216" target="_blank" className="ml-3 text-gray-500 dark:text-gray-300"> 
                                     <i className="fab fa-linkedin-in fontawesom-icon"></i>                       
                                 </a>                                
-                                <a href="" target="_blank" className="ml-3 text-gray-500 dark:text-gray-300"> 
+                                <a href="https://drive.google.com/file/d/11EPz9DZhNu-O14Qm5rzgt5wKa8KGWWX9/view?usp=sharing" target="_blank" className="ml-3 text-gray-500 dark:text-gray-300"> 
                                     <i className="fas fa-globe-asia fontawesom-icon"></i>                       
                                 </a>
                             </span>
@@ -93,7 +95,7 @@ const Team = () => {
                     </div>
                     <div className="p-4 lg:w-1/2">
                         <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-                        <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://dummyimage.com/200x200"/>
+                        <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src={RishabhPatil} />
                         <div className="flex-grow sm:pl-8">
                             <h2 className="title-font font-medium text-lg text-gray-900 dark:text-gray-100">Rishabh Patil</h2>
                             <h3 className="text-gray-500 mb-3 dark:text-gray-200">Fullstack Developer</h3>
@@ -108,7 +110,7 @@ const Team = () => {
                                 <a href="www.linkedin.com/in/rishabhpatil--" target="_blank" className="ml-3 text-gray-500 dark:text-gray-300"> 
                                     <i className="fab fa-linkedin-in fontawesom-icon"></i>                       
                                 </a>                                
-                                <a href="" target="_blank" className="ml-3 text-gray-500 dark:text-gray-300"> 
+                                <a href="https://nobrainer.co.in/" target="_blank" className="ml-3 text-gray-500 dark:text-gray-300"> 
                                     <i className="fas fa-globe-asia fontawesom-icon"></i>                       
                                 </a>
                             </span>
