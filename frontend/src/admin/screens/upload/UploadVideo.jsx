@@ -93,7 +93,7 @@ function Upload() {
             </form>
             <br/>
             <form encType="multipart/form-data">
-            <h3>Attachment</h3><input type="file"  className="form-control" filename="attachmentFile" onChange={changeAttachment} />
+            <h3>Attachment</h3><input type="file"  className="form-control" filename="" onChange={changeAttachment} />
             <input type="submit" value="attach" onClick={uploadAttach}/>
             </form>
             <br/>

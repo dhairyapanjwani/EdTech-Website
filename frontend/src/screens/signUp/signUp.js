@@ -60,14 +60,14 @@ export default function SignUp() {
   return (
     <div className="container-fluid bg-light">
       <div class="grid grid-cols-3 gap-4">
-      <div class="col-span-2 ...">
-          <figure>
+      <div class="col-span-2 grid place-content-center">
+          <figure class=" mb-20 ">
             <img src={register} alt="SignIn picture" />
           </figure>
 
         </div>
-        <div >
-          <Container >
+        <div class="mb-20 align-middle" >
+          <Container  >
             <CssBaseline />
             <div className={classes.paper}>
               <Avatar

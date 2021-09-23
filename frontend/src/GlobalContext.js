@@ -6,7 +6,11 @@ import reactPng from "./assets/images/react.png";
 export const GlobalContext = createContext();
 
 export const GlobalProvider = (props) => {
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState(
+    localStorage.getItem("edtech-user")
+      ? JSON.parse(localStorage.getItem("edtech-user"))
+      : {}
+  );
   const [theme, setTheme] = useState(
     localStorage.getItem("edtech-theme") === true ? true : false
   );
@@ -18,6 +22,13 @@ export const GlobalProvider = (props) => {
   const [allCourses, setAllCourses] = useState([]);
   const [courseSearch, setCourseSearch] = useState("");
   const [courseSearchResult, setCourseSearchResult] = useState(allCourses);
+
+  useEffect(() => {
+    console.log(userData);
+    if (!localStorage.getItem("edtech-user")) {
+      localStorage.setItem("edtech-user", JSON.stringify(userData));
+    }
+  }, [userData]);
 
   useEffect(() => {
     console.log(theme);
@@ -66,7 +77,7 @@ export const GlobalProvider = (props) => {
   return (
     <GlobalContext.Provider
       value={{
-        user: [userData, setUserData],
+        userInfo: [userData, setUserData],
         siteTheme: [theme, setTheme],
         courseSelection: [courseSelect, setCourseSelect],
         courseAll: [allCourses, setAllCourses],

@@ -33,11 +33,12 @@ app.use('/api/v1/auth/google',require('./routes/authApi'));
 app.use('/api/signIn', require('./routes/signIn'));
 app.use('/api/course', require('./routes/course'));
 
-app.use('/api/upload', require('./routes/upload'));
+app.use('/api/uploadvideo', require('./routes/uploadVideo'));
 app.use('/api/video', require('./routes/video'));
 app.use('/api/user', require('./routes/user'));
 app.use('/api/payment',require('./routes/payment'));
 app.use('/api/quiz',require('./routes/quiz'));
 app.use('/api/authapi',require('./routes/authApi'));
+app.use('/api/uploadcourse',require('./routes/uploadCourse'));
 
 module.exports = app;
