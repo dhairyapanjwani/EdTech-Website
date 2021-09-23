@@ -1,9 +1,64 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { useHistory } from 'react-router-dom';
 import AdminNavbar from "../../screens/navbar/Navbar";
+import Axios from 'axios'
 
 export default function Example() {
     const history = useHistory();
+    const [title,setTitle]=useState('');
+    const [description,setDescription]=useState("");
+    const [category, setCategory]=useState("");
+    const [amount, setAmount]=useState(0);
+    const [coverFile,setCoverFile]=useState(null)
+    const [attachmentFile,setAttachmentFile]=useState(null)
+
+    const changeCover=(event)=>{
+      setCoverFile(event.target.files[0])
+      
+    }
+
+    const changeAttachment=(event)=>{
+      setAttachmentFile(event.target.files[0])
+      console.log(event.target.files[0])
+    }
+
+    const handleSubmission=(event)=>{
+      event.preventDefault()
+      console.log("submitted")
+      const formData = new FormData();
+      formData.append('coverFile', coverFile);
+      formData.append('title', title);
+      formData.append('description', description);
+      formData.append('cover_name', coverFile.name);
+      formData.append('amount', amount);
+      formData.append('category', category);
+      Axios.post("http://localhost:3001/api/uploadcourse/cover", formData, {
+          headers: {
+            'Content-Type': `multipart/form-data; 
+            'Authorization': 'JWT fefege...',
+            'accept': 'application/json',
+            'Accept-Language': 'en-US,en;q=0.8',boundary=${formData._boundary}`,
+          }
+        })
+        .then((response)=>{
+        const formData1 = new FormData();
+        formData1.append('attachmentFile', attachmentFile);
+        formData1.append('attachment_name', attachmentFile.name);
+        formData1.append('courseId', response.data.course._id);
+        Axios.post("http://localhost:3001/api/uploadcourse/attachment", formData1, {
+          headers: {
+            'Content-Type': `multipart/form-data; 
+            'Authorization': 'JWT fefege...',
+            'accept': 'application/json',
+            'Accept-Language': 'en-US,en;q=0.8',boundary=${formData1._boundary}`,
+          }
+        })
+        .then((response)=>{
+          console.log(response.data)
+        })
+      })
+    }
+
     return (        
       <>
       <AdminNavbar/>
@@ -15,7 +70,7 @@ export default function Example() {
           <div className="md:grid md:grid-cols-2 md:gap-6 px-40">
           <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 dark:text-gray-100">Upload a new course</h1>
             <div className="mt-5 md:mt-0 md:col-span-2">
-              <form action="#" method="POST">
+              <form encType="multipart/form-data" onSubmit={handleSubmission}>
                 <div className="shadow sm:rounded-md sm:overflow-hidden">
                   <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                   <div>
@@ -24,12 +79,13 @@ export default function Example() {
                       </label>
                       <div className="mt-1">
                         <textarea
+                          value={title}
+                          onChange={(event)=>{setTitle(event.target.value)}}
                           id="about"
                           name="about"
                           rows={3}
                           className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                           placeholder="Title..."
-                          defaultValue={''}
                         />
                       </div>
                     </div>
@@ -39,6 +95,8 @@ export default function Example() {
                       </label>
                       <div className="mt-1">
                         <textarea
+                          value={description}
+                          onChange={(event)=>{setDescription(event.target.value)}}
                           id="about"
                           name="about"
                           rows={3}
@@ -51,13 +109,17 @@ export default function Example() {
 
 
                     <div class="inline-block relative w-64">
-                      <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                      <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" value={category} onChange={(event)=>{setCategory(event.target.value)}}>
                         <option>Select Category</option>
-                        <option>Option 2</option>
-                        <option>Option 3</option>
+                        <option>ReactJS</option>
+                        <option>NodeJS</option>
+                        <option>Python Django</option>
+                        <option>Fullstack Django</option>
+                        <option>Fullstack Node</option>
                       </select>
                       <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        
                       </div>
                     </div>
 
@@ -69,6 +131,7 @@ export default function Example() {
                       </label>
                       <div className="mt-1">
                         <textarea
+                          value={amount} onChange={(event)=>{setAmount(event.target.value)}}
                           id="about"
                           name="about"
                           rows={3}
@@ -102,8 +165,8 @@ export default function Example() {
                               htmlFor="file-upload"
                               className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                             >
-                              <span>Upload a cover photo</span>
-                              <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+                              <input id="file-upload" filename="coverFile" type="file" className="form-control" 
+                              onChange={changeCover}/>
                             </label>
                             <p className="pl-1">or drag and drop</p>
                           </div>
@@ -138,8 +201,10 @@ export default function Example() {
                               htmlFor="file-upload"
                               className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                             >
-                              <span>Upload a pdf</span>
-                              <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+                              <input 
+                              type="file" 
+                              filename="attachmentFile" 
+                              onChange={changeAttachment}/>
                             </label>
                             <p className="pl-1">or drag and drop</p>
                           </div>
