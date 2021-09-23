@@ -23,6 +23,7 @@ app.use('/api/uploads/videos', express.static('uploads/videos'));
 app.use('/api/uploads/thumbnails', express.static('uploads/thumbnails'));
 app.use('/api/uploads/attachments', express.static('uploads/attachments'));
 app.use('/api/uploads/cover', express.static('uploads/cover'));
+app.use('/api/uploads/profile', express.static('uploads/profile'));
 
 // // Routes
 

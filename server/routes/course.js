@@ -75,45 +75,22 @@ router.get("/:category",async (req, res) => {
       if(err){
         res.status(500).json({message:"failure",error:err});
       }
-      course.likes.push(userId)
-      course.markModified('likes');
-      course.save()
+      if(course.likes.includes(userId)){
+        const index = course.likes.indexOf(userId);
+        if (index > -1) {
+          course.likes.splice(index, 1);
+        }
+        course.markModified('likes');
+        course.save();
+      }
+      else{
+        course.likes.push(userId)
+        course.markModified('likes');
+        course.save()
+      }
       res.status(200).json({message:"success",course:course});
   })
   })
-
-
-
-
-  router.put("/dislike", async (req, res) => {
-    const userId=req.body.userId;
-    const courseId=req.body.courseId;
-    try{
-      Course.findById(courseId,function (err, result) {
-      if(result.likes.includes(userId)){
-        const index = result.likes.indexOf(userId);
-        if (index > -1) {
-          result.likes.splice(index, 1);
-        }
-        result.markModified('likes');
-        result.save();
-        res.status(200).json({
-          message:"success",
-          course:result
-        })
-      }
-      else{
-        res.status(200).json({
-          message:"not liked"
-        })
-      }
-      
-    }
-    ).catch((err)=>{console.log(err)})
-    }catch(err){
-      res.status(500).json(err)
-    }
-  });
 
   router.get("/getliked/:id",async (req, res) => {
     var courses=[];
