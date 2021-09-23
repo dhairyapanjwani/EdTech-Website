@@ -26,7 +26,7 @@ const CourseCard = props => {
       console.log(like.data.courses.map(elem => elem.likes.includes('614adf467e4020a62c1b157d')));
     };
     fetchImg();
-  }, [courseSelect]);
+  }, [courseSelect, cover_name]);
   useEffect(() => {
     console.log('present', present)
     const toggler = async () => {
