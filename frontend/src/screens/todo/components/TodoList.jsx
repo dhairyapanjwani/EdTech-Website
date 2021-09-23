@@ -1,0 +1,23 @@
+import React from "react";
+import Todo from "./Todo"
+
+const TodoLists=({todos,setTodos,filteredTodos})=>{
+    console.log(filteredTodos);
+    return(
+
+        <div className="todo-container">
+            <ul className="todo-list">
+                {filteredTodos.map(todo=>(
+                    <Todo 
+                    todo={todo}
+                    setTodos={setTodos}
+                    todos={todos} 
+                    text={todo.text} 
+                    key={todo.id}/>
+                ))}
+            </ul>
+        </div>
+    );
+}
+
+export default TodoLists;

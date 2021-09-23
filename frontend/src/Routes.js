@@ -16,6 +16,7 @@ import Reports from "./screens/report/Reports";
 import UploadCourse from "./admin/screens/upload_course/UploadCourse";
 import CourseOverview from "./screens/courses/CourseOverview";
 import QuestionCard from "./components/quiz/QuestionCard";
+import TodoTemp from "./screens/todo/TodoTemp";
 
 const Routes = (props) => {
   const history = createBrowserHistory();
@@ -37,12 +38,12 @@ const Routes = (props) => {
         <Route path="/admin/upload_course" component={UploadCourse} exact />
         <Route path="/adminlogin" component={AdminLogin} exact />
         <Route path="/reports" component={Reports} exact />
-        <Route path="/" component={Home} exact />
-        <Route path="/" component={NotFound} />      
         <Route path="/editor" exact component={CodeEditor} />
         <Route path="/admin/upload_course" component={UploadCourse} exact />
         <Route path="/adminlogin" component={AdminLogin} exact />
         <Route path="/reports" component={Reports} exact />
+        <Route path="/" component={Home} exact />
+        <Route path="/notes" component={TodoTemp} exact/>
         <Route path="/:anything" component={NotFound} />
       </Switch>
     </BrowserRouter>

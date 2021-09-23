@@ -60,8 +60,8 @@ export default function SignUp() {
   return (
     <div className="container-fluid bg-light">
       <div class="grid grid-cols-3 gap-4">
-      <div class="col-span-2">
-          <figure class="align-middle mb-20 ">
+      <div class="col-span-2 grid place-content-center">
+          <figure class=" mb-20 ">
             <img src={register} alt="SignIn picture" />
           </figure>
 
