@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from 'react-router-dom';
+import { GlobalContext } from '../../GlobalContext';
 
 import CourseApi from "../../util/CourseApi";
 
 const CourseCard = props => {
+  const { courseSelection } = useContext(GlobalContext);
+  const [courseSelect, setCourseSelect] = courseSelection;
   const history = useHistory();
   console.log(props.course);
   const { title, category, description, cover_name, rating, enrolled, _id } = props.course;
@@ -23,7 +26,7 @@ const CourseCard = props => {
       console.log(like.data.courses.map(elem => elem.likes.includes('614adf467e4020a62c1b157d')));
     };
     fetchImg();
-  }, []);
+  }, [courseSelect]);
   useEffect(() => {
     console.log('present', present)
     const toggler = async () => {
