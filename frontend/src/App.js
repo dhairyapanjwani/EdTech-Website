@@ -3,15 +3,11 @@ import { GlobalProvider } from "./GlobalContext";
 import Routes from "./Routes";
 import Footer from "./components/Footer/Footer";
 
-
-
-
 const App = (props) => {
-
   return (
     <GlobalProvider>
       <Routes />
-      <Footer/>
+      <Footer />
     </GlobalProvider>
   );
 };

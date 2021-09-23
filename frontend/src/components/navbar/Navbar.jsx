@@ -20,8 +20,8 @@ export default function Navbar() {
     }, [curr]);
 
     const navigation = [
-        { name: 'Home', href: '/home', current: curr === '/home' ? true : false },
         { name: 'Courses', href: '/courses', current: curr === '/courses' ? true : false },
+        { name: 'CodeEditor', href: '/editor', current: curr === '/editor' ? true : false },
         { name: 'Reports', href: '/reports', current: curr === '/reports' ? true : false },
         { name: 'Our Team', href: '/team', current: curr === '/team' ? true : false },
     ]
@@ -46,7 +46,7 @@ export default function Navbar() {
                                 </Disclosure.Button>
                             </div>
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                                <div className="flex-shrink-0 flex items-center">
+                                <div className="flex-shrink-0 flex items-center" onClick={() => history.push('/')}>
                                     <img
                                         className="block lg:hidden h-8 w-auto"
                                         src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"

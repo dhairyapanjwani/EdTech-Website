@@ -15,6 +15,8 @@ import useDetails from "../useDetails";
 import axios from "axios";
 import "./login.css";
 import signIn from "../../../src/assets/images/signIn.png";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.min.js";
 import GoogleLogin from "react-google-login";
 
 export default function SignInSide() {
