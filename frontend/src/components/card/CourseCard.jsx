@@ -16,7 +16,7 @@ const CourseCard = props => {
       setImg(cover_img.config.url);
 
       const like = await CourseApi.getLiked('614adf467e4020a62c1b157d');
-      console.log(like.data.courses);
+      console.log('20', like.data.courses);
       setLikes(like.data.courses);
       
       like.data.courses.map(elem => elem.likes.includes('614adf467e4020a62c1b157d') && setPresent(true))
@@ -25,18 +25,14 @@ const CourseCard = props => {
     fetchImg();
   }, []);
   useEffect(() => {
+    console.log('present', present)
     const toggler = async () => {
-      if(present){
-        await CourseApi.likeIt('614adf467e4020a62c1b157d', _id);
-      } else {
-        await CourseApi.dislikeIt('614adf467e4020a62c1b157d', _id);
-      }
+      const data = await CourseApi.likeIt('614adf467e4020a62c1b157d', _id);
+      console.log('CCJSX30', data.data.course.likes);
+      setLikes(data.data.course.likes);
     };
 
     toggler();
-    console.log(present);
-    console.log('Len', likes);
-    console.log('nxt', likes.find(elem => elem._id === _id));
   }, [present]);
     return (
             <div class="p-4 md:w-1/3">
@@ -63,7 +59,8 @@ const CourseCard = props => {
                         <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
                       </svg>) : (<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>)}{likes.length !== 0 && new Set(likes.find(elem => elem._id === _id).likes).size}
+                      </svg>)}
+                      {likes.length}
                     </span>
                     <span class="text-gray-400 inline-flex items-center leading-none text-sm">
                       <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>{rating}
