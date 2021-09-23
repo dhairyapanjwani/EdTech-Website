@@ -6,10 +6,6 @@ import useRegisterStyles from './registerStyles';
 import useValidation from '../../validation/useValidation';
 import "./register.css";
 import register from "../../assets/images/register.png";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
-
-
 
 
 
@@ -44,8 +40,14 @@ export default function SignUp() {
 
 
     <div className="container-fluid bg-light">
-      <div className="row">
-        <div className="col-4">
+      <div class="grid grid-cols-3 gap-4">
+      <div class="col-span-2 ...">
+          <figure>
+            <img src={register} alt="SignIn picture" />
+          </figure>
+
+        </div>
+        <div >
           <Container >
             <CssBaseline />
             <div className={classes.paper}>
@@ -55,15 +57,15 @@ export default function SignUp() {
               <Typography component="h1" variant="h5">
                 Sign up
               </Typography>
-              <Typography component="h6" variant="h6">
+              {/* <Typography component="h6" variant="h6">
                 or
-              </Typography>
+              </Typography> */}
               <form className={classes.form} onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
                   <Typography component="h6" variant="h6" className={warn !== '' ? classes.show : classes.hidden}>
                     {warn}
                   </Typography>
-                  <FormControl component="fieldset">
+                  {/* <FormControl component="fieldset">
                     <FormLabel component="legend">&nbsp;&nbsp;&nbsp;&nbsp;Role</FormLabel>
                     <RadioGroup row aria-label="role" name="role" defaultValue="start">
                       <FormControlLabel
@@ -90,7 +92,7 @@ export default function SignUp() {
                         disabled
                       />
                     </RadioGroup>
-                  </FormControl>
+                  </FormControl> */}
                   <Grid item xs={12} sm={6}>
                     <TextField
                       autoComplete="fname"
@@ -189,162 +191,7 @@ export default function SignUp() {
             </div>
           </Container>
         </div>
-        <div className="col-8">
-          <figure>
-            <img src={register} alt="SignIn picture" />
-          </figure>
-
-        </div>
       </div>
-
-
-
-      {/* <Container component="main" maxWidth="xs" className={classes.root} className="body1">
-        <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}  style={{backgroundColor: '#6366f1', color: '#FFFFFF'}}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
-          <Typography component="h6" variant="h6">
-            or
-          </Typography>
-          <form className={classes.form} onSubmit={handleSubmit}>
-            <Grid container spacing={2}>
-              <Typography component="h6" variant="h6" className={warn !== '' ? classes.show : classes.hidden}>
-                {warn}
-              </Typography>
-              <FormControl component="fieldset">
-                <FormLabel component="legend">&nbsp;&nbsp;&nbsp;&nbsp;Role</FormLabel>
-                <RadioGroup row aria-label="role" name="role" defaultValue="start">
-                  <FormControlLabel
-                    value="student"
-                    control={<Radio color="primary" />}
-                    label="Student"
-                    labelPlacement="start"
-                    checked={isChecked.initial}
-                    onChange={handleChange}
-                  />
-                  <FormControlLabel
-                    value="instructor"
-                    control={<Radio color="primary" />}
-                    label="Instructor"
-                    labelPlacement="start"
-                    onChange={handleChange}
-                  />
-                  <FormControlLabel
-                    value="admin"
-                    control={<Radio color="primary" />}
-                    label="Admin"
-                    labelPlacement="start"
-                    onChange={handleChange}
-                    disabled
-                  />
-                </RadioGroup>
-              </FormControl>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="fname"
-                  name="firstName"
-                  // variant="outlined"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                  error={err.fname}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  // variant="outlined"
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="lname"
-                  error={err.lname}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  error={err.email}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="mobileNo"
-                  label="Mobile Number"
-                  name="mobileNo"
-                  autoComplete="mobileNo"
-                  error={err.num}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="address"
-                  label="Address"
-                  name="address"
-                  autoComplete="address"
-                  error={err.address}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                  error={err.password}
-                  onChange={handleChange}
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              style={{backgroundColor: '#6366f1', color: '#FFFFFF'}}
-              className={classes.submit}
-            >
-              Sign Up
-            </Button>
-            <Grid container justify="flex-end">
-              <Grid item >
-                <Link to="/login" variant="body2"  >
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
-          </form>
-          <div >
-            <figure>
-              <img src={register} alt="SignIn picture" className="regImg" />
-            </figure>
-          </div>
-        </div>
-      </Container> */}
     </div>
   );
 }
