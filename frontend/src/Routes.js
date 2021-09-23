@@ -17,6 +17,7 @@ import Reports from "./screens/report/Reports";
 import UploadCourse from "./admin/screens/upload_course/UploadCourse";
 import CourseOverview from "./screens/courses/CourseOverview";
 import QuestionCard from "./components/quiz/QuestionCard";
+import TodoList from "./screens/todo/Temp";
 
 const Routes = (props) => {
   const history = createBrowserHistory();
@@ -46,6 +47,8 @@ const Routes = (props) => {
         <Route path="/reports" component={Reports} exact />
         <Route path="/" component={Home} exact />
         <Route path="/:anything" component={NotFound} />
+        <Route path="/todo" component={TodoList} exact/>
+
       </Switch>
     </BrowserRouter>
   );
