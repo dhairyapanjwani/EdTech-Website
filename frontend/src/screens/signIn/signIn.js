@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import {
   Avatar,
@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import { GlobalContext } from "../../GlobalContext";
 import useLoginStyles from "./loginStyles";
 import useDetails from "../useDetails";
 import axios from "axios";
@@ -20,6 +21,8 @@ import signIn from "../../../src/assets/images/signIn.png";
 import GoogleLogin from "react-google-login";
 
 export default function SignInSide() {
+  const { userInfo } = useContext(GlobalContext);
+  const [userData, setUserData] = userInfo;
   const responseGoogle = (response) => {
     setData({ name: response.nt.Ad, email: response.nt.wt });
     window.location.href = "http://localhost:3000/landing";
@@ -53,52 +56,59 @@ export default function SignInSide() {
 
     axios
       .post("http://localhost:3001/api/signIn", {
-        email:email,
-        password:password,
+        email: email,
+        password: password,
       })
       .then((res) => {
         console.log(res.data);
-        if(res.data.message=="Please Verify Your Email!"  || res.data.message=="Invalid credentials"){
+        setUserData(res.data.user);
+        localStorage.setItem("edtech-user", JSON.stringify(res.data.user));
+        if (
+          res.data.message == "Please Verify Your Email!" ||
+          res.data.message == "Invalid credentials"
+        ) {
           setWarn(res.data.message);
         }
         setRes(res.data.user);
-        
+        if (res.data.user) {
+          history.push("/");
+        }
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const handleLogin = async googleData => {
+  const handleLogin = async (googleData) => {
     const res = await fetch("http://localhost:3001/api/v1/auth/google", {
-        method: "POST",
-        body: JSON.stringify({
-        token: googleData.tokenId
+      method: "POST",
+      body: JSON.stringify({
+        token: googleData.tokenId,
       }),
       headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    const data = await res.json()
-    if(data.message=="success"){
-      window.alert("login success")
-      localStorage.setItem('user',JSON.stringify(data.user))
-      history.push('/')
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await res.json();
+    setUserData(data.user.user);
+    localStorage.setItem("edtech-user", JSON.stringify(data.user.user));
+    if (data.message == "success") {
+      window.alert("login success");
+      localStorage.setItem("user", JSON.stringify(data.user));
+      history.push("/");
+    } else {
+      window.alert("Invalid credentials hei");
     }
-    else{
 
-      window.alert("Invalid credentials hei")
-    }
-    
     // store returned user somehow
-  }
+  };
 
   const classes = useLoginStyles();
   return (
     <div class="bg-gray-50">
-      <div >
-        <div class="grid grid-cols-3 gap-4" >
-          <div class="col-span-2 " >
+      <div>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="col-span-2 ">
             <figure class="mb-25 mt-20">
               <img src={signIn} alt="SignIn picture" />
             </figure>
@@ -118,10 +128,10 @@ export default function SignInSide() {
                 <br />
                 <GoogleLogin
                   clientId="624398540702-hft2l1uf6p82b8u4ui0soag8l7e9mdrq.apps.googleusercontent.com"
-                buttonText="Log in with Google"
-                onSuccess={handleLogin}
-                onFailure={handleLogin}
-                cookiePolicy={'single_host_origin'}
+                  buttonText="Log in with Google"
+                  onSuccess={handleLogin}
+                  onFailure={handleLogin}
+                  cookiePolicy={"single_host_origin"}
                 />
                 <br />
                 <Typography component="h6" variant="h6">
@@ -181,7 +191,6 @@ export default function SignInSide() {
           </div>
         </div>
       </div>
-     
     </div>
   );
 }
