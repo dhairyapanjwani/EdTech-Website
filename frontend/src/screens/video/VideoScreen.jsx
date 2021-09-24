@@ -84,7 +84,7 @@ function VideoScreen({match}) {
             <Navbar />
             <div className="flex justify-center">
             <div className="flex w-11/12">
-                <div class="width_640 flex-none w-2/3">
+                <div className="width_640 flex-none w-2/3">
                     <div className="px-12 pt-8">
                         <ReactPlayer 
                         width="100%"
@@ -94,64 +94,64 @@ function VideoScreen({match}) {
                         controls 
                         />
                     </div>
-                    <div class="flex pt-2 px-12">
-                        <h1 class="title-font text-2xl  font-medium text-gray-900 dark:text-gray-100  ">{video.title}</h1>
+                    <div className="flex pt-2 px-12">
+                        <h1 className="title-font text-2xl  font-medium text-gray-900 dark:text-gray-100  ">{video.title}</h1>
 
-                        <span class="text-gray-800 dark:text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-600 dark:border-gray-400">
-                        <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <span className="text-gray-800 dark:text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-600 dark:border-gray-400">
+                        <svg className="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                             <circle cx="12" cy="12" r="3"></circle>
                         </svg>1.2K
                         </span>
 
-                        <span class="text-gray-800 dark:text-gray-400 inline-flex items-center leading-none text-sm">
-                        <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <span className="text-gray-800 dark:text-gray-400 inline-flex items-center leading-none text-sm">
+                        <svg className="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                             <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
                         </svg>{video.comments.length}
                         </span>
                         
                     </div>
 
-                    <p class="leading-relaxed px-12 pt-2 mb-2 dark:text-gray-400">{video.description}</p>
+                    <p className="leading-relaxed px-12 pt-2 mb-2 dark:text-gray-400">{video.description}</p>
 
-                    <div class="width-full bg-gray-400 h-px my-4 mx-12 dark:bg-gray-600"></div>
+                    <div className="width-full bg-gray-400 h-px my-4 mx-12 dark:bg-gray-600"></div>
 
-                    <div class="mx-12 flex justify-between">
+                    <div className="mx-12 flex justify-between">
                         
-                        <div class="flex w-full items-center">
-                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 dark:border-white border-gray-900">
-                                <img src="http://localhost:3001/api/uploads/cover/test.jpg" alt="" class="w-full h-full object-cover"/>
+                        <div className="flex w-full items-center">
+                            <div className="w-12 h-12 rounded-full overflow-hidden border-2 dark:border-white border-gray-900">
+                                <img src="http://localhost:3001/api/uploads/cover/test.jpg" alt="" className="w-full h-full object-cover"/>
                             </div>
                             <div>
-                            <h1 class="title-font ml-2 text-2xl font-medium text-gray-900 dark:text-gray-100  ">{course.title}</h1>
-                            <div class="ml-2 mt-1">
-                            <span class="text-gray-800 dark:text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-600 dark:border-gray-400">
-                                <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <h1 className="title-font ml-2 text-2xl font-medium text-gray-900 dark:text-gray-100  ">{course.title}</h1>
+                            <div className="ml-2 mt-1">
+                            <span className="text-gray-800 dark:text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-600 dark:border-gray-400">
+                                <svg className="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>{course.likes.length}
                             </span>
-                            <span class="text-gray-800 dark:text-gray-400 inline-flex items-center leading-none text-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>{course.rating}
+                            <span className="text-gray-800 dark:text-gray-400 inline-flex items-center leading-none text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>{course.rating}
                             </span>
                             </div>
                             </div>
                         </div>
                         <button 
                                 type="button" 
-                                class="px-4 py-3 bg-indigo-500 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform  flex justify-center w-1/3 h-1/3"
+                                className="px-4 py-3 bg-indigo-500 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform  flex justify-center w-1/3 h-1/3"
                                 onClick={()=>{history.push('/editor')}}
                             >
-                                {/* <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                {/* <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                 </svg> */}
-                                <span class="">Open editor</span>
+                                <span className="">Open editor</span>
                         </button>
                     </div>
 
-                    <div class="width-full bg-gray-400 h-px my-4 mx-12 dark:bg-gray-600"></div>
+                    <div className="width-full bg-gray-400 h-px my-4 mx-12 dark:bg-gray-600"></div>
 
-                    <div class="px-12">
+                    <div className="px-12">
 
                     <form  onSubmit={handleSubmission}>
                         <div className="relative flex flex-wrap items-stretch my-4 my-8 w-full mr-4 ">
@@ -175,20 +175,20 @@ function VideoScreen({match}) {
 
                 {/* video list */}
                 <div className="flex-none w-1/3">
-                    <div class="pt-8">
-                        <div class="flex justify-between">
-                            <h1 class="title-font text-2xl font-medium text-gray-900 dark:text-gray-100  w-7/12">{course.title}</h1>
+                    <div className="pt-8">
+                        <div className="flex justify-between">
+                            <h1 className="title-font text-2xl font-medium text-gray-900 dark:text-gray-100  w-7/12">{course.title}</h1>
                             <div>
                             <button 
                                 type="button" 
-                                class="px-4 py-3 bg-indigo-500 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform  flex"
+                                className="px-4 py-3 bg-indigo-500 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform  flex"
                                 onClick={()=>{history.push(`/courses/${video.courseId}`)}}
                             >
-                                <span class="">Go to Course</span>
+                                <span className="">Go to Course</span>
                             </button>
                             </div>
                         </div>
-                        <div class="width-full bg-gray-400 h-px my-4 dark:bg-gray-600"></div>
+                        <div className="width-full bg-gray-400 h-px my-4 dark:bg-gray-600"></div>
                         {videoList.map((video,index)=>(
                             
                         <Link to={`/video/${video._id}`}>

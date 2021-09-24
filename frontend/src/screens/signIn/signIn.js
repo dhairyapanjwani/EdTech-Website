@@ -105,15 +105,15 @@ export default function SignInSide() {
 
   const classes = useLoginStyles();
   return (
-    <div class="bg-gray-50">
-      <div class="mb-40">
-        <div class="grid grid-cols-3 gap-4" >
-          <div class="col-span-2 mt-30 grid place-content-center">
+    <div className="bg-gray-50">
+      <div className="mb-40">
+        <div className="grid grid-cols-3 gap-4" >
+          <div className="col-span-2 mt-30 grid place-content-center">
             <figure>
               <img src={signIn} alt="SignIn picture" />
             </figure>
           </div>
-          <div class="bg-gray-50 max-w-lg mt-35">
+          <div className="bg-gray-50 max-w-lg mt-35">
             <Grid >
               <div className={classes.paper}>
                 <Avatar

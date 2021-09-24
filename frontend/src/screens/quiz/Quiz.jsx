@@ -11,7 +11,7 @@ const Quiz = () => {
         <div id="Quiz-Main-Block" className="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-200">
             <Navbar />
             <div className="text-indigo-500 text-md ml-12 mt-8" onClick={() => history.goBack()}>
-                <i class="fas fa-arrow-left"></i> Back
+                <i className="fas fa-arrow-left"></i> Back
             </div>
             <QuestionCard />
         </div>

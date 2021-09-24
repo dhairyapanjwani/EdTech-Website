@@ -54,7 +54,7 @@ function TodoTemp() {
   }
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-800" id="Course-Main-Div">
+    <div className="bg-gray-50 dark:bg-gray-800" id="Todo-Main-Div">
       <Navbar />
       <div>
         <div className="todo-header">

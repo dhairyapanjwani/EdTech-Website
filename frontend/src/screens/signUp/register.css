@@ -1,40 +1,35 @@
 /* body{
-    background-color: rgb(205, 248, 248);
-    border:2px solid rgb(238, 210, 210);
+    display: flex;
+    align-items: center;
+    background-color: rgb(20, 17, 180);
+}
+
+.signImg{
+    postion : absolute;
+    top:50px;
+    left:50px;
 } */
-
-
-.body1{
-    background-color:rgb(250, 255, 255);
-    display:flex;
-    float:left;
-    position:absolute;
-    left:150px;
-    top:100px;
+/* body {margin: 0; height: 100%; overflow: hidden} */
+#Course-Main-Div {
+    min-height: calc(100vh - 80px);
+  }
+  
+#SignIn-Main-Block {
+  min-height: calc(100vh - 80px);
 }
 
-.regImg {
-    position: absolute;
-    top: 50px;
-    right: -939px;
-    width: 200%;
+.signImg {
+  height:90%;
+  margin-top: -60px;
 }
 
-/* .MuiAvatar-colorDefault {
-    color: #fff;
-    background-color: #6366f1;
+.cont1 {
+  position: absolute;
+  top: 100px;
+  height: 90%;
+  right: 10px;
 }
 
-.MuiButton-containedPrimary {
-    color: #fff;
-    background-color: #6366f1;
-}
-
-.MuiButton-containedPrimary {
-    color: #fff;
-    background-color: #6366f1;
-} */
-
-.f1{
-    width:100%;
+.im1 {
+  height: 200%;
 }
