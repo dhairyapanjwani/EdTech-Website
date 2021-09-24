@@ -24,50 +24,50 @@ class _VideoImpState extends State<VideoImp> {
         networkVideos: [
           new NetworkVideo(
               id: "2",
-              name: "Elephant Dream",
+              name: "MERN stack Tutorial #1",
               videoUrl:
-                  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+                  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
               thumbnailUrl:
-                  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
+                  "https://miro.medium.com/max/1838/1*jDIj2SKAE-Bp32owLoHDjw.png",
               videoControl: new NetworkVideoControl(
                 fullScreenByDefault: true,
               )),
           new NetworkVideo(
               id: "3",
-              name: "Big Buck Bunny",
+              name: "MERN stack Tutorial #2",
               videoUrl:
                   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
               thumbnailUrl:
-                  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
+                  "https://miro.medium.com/max/1838/1*jDIj2SKAE-Bp32owLoHDjw.png",
               videoControl: new NetworkVideoControl(autoPlay: true)),
           new NetworkVideo(
               id: "4",
-              name: "For Bigger Blazes",
+              name: "MERN stack Tutorial #3",
               videoUrl:
                   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
               thumbnailUrl:
-                  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"),
+                  "https://miro.medium.com/max/1838/1*jDIj2SKAE-Bp32owLoHDjw.png"),
           new NetworkVideo(
               id: "5",
-              name: "For Bigger Escape",
+              name: "MERN stack Tutorial #4",
               videoUrl:
                   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
               thumbnailUrl:
-                  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg"),
+                  "https://miro.medium.com/max/1838/1*jDIj2SKAE-Bp32owLoHDjw.png"),
           new NetworkVideo(
               id: "6",
-              name: "For Bigger Fun",
+              name: "MERN stack Tutorial #5",
               videoUrl:
                   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
               thumbnailUrl:
-                  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg"),
+                  "https://miro.medium.com/max/1838/1*jDIj2SKAE-Bp32owLoHDjw.png"),
           new NetworkVideo(
               id: "7",
-              name: "For Bigger Joyrides",
+              name: "MERN stack Tutorial #6",
               videoUrl:
                   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
               thumbnailUrl:
-                  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"),
+                  "https://miro.medium.com/max/1838/1*jDIj2SKAE-Bp32owLoHDjw.png"),
         ],
         playlistStyle: Style.Style2,
       ),

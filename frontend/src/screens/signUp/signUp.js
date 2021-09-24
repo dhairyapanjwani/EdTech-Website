@@ -64,7 +64,7 @@ export default function SignInSide() {
         <div className="col-span-2 mt-30 grid place-content-center">
           <figure>
             <img
-              className="signImg w-full"
+              className="w-full"
               src={register}
               alt="SignIn picture"
             />
