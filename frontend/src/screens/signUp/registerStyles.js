@@ -1,14 +1,22 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useRegisterStyles = makeStyles((theme) => ({
+const useLoginStyles = makeStyles((theme) => ({
   root: {
     height: 'auto',
   },
   button: {
     margin: theme.spacing(1),
   },
+  image: {
+    backgroundImage: 'url('+require('../../assets/images/loginpage.jpg')+')',
+    backgroundRepeat: 'no-repeat',
+    backgroundColor:
+      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   paper: {
-    marginTop: theme.spacing(8),
+    margin: theme.spacing(8, 4),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -31,10 +39,9 @@ const useRegisterStyles = makeStyles((theme) => ({
   },
   show: {
     display: 'block',
-    width: '100%',
     textAlign: 'center',
     color: '#ff0000',
   },
 }));
 
-export default useRegisterStyles;
+export default useLoginStyles;

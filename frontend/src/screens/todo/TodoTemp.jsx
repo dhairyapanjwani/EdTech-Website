@@ -54,9 +54,9 @@ function TodoTemp() {
   }
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-800" id="Course-Main-Div">
+    <div className="bg-gray-50 dark:bg-gray-800" id="Todo-Main-Div">
       <Navbar />
-      <div>
+      <div className="flex flex-col justify-center align-center">
         <div className="todo-header">
           <h1 className="text-gray-900 dark:text-gray-100 text-5xl font-medium title-font mb-10 mt-10 font-extrabold">Todo List </h1>
         </div>
