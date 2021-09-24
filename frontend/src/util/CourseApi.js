@@ -4,7 +4,7 @@ const url = "http://localhost:3001/api/course";
 
 const CourseApi = {
   allCourses: async () => {
-    const data = await axios.get(`${url}/all`);
+    const data = await axios.get(`${url}/getranked`);
     return data;
   },
   courseImg: async (name) => {
