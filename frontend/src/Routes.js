@@ -1,5 +1,6 @@
 import { createBrowserHistory } from "history";
 import { Router, Switch, Route, BrowserRouter } from "react-router-dom";
+import ProtectedRoute from "./util/ProtectedRoute";
 import Temp from "./admin/Temp";
 import SignInSide from "./screens/signIn/signIn";
 import SignUp from "./screens/signUp/signUp";
@@ -24,27 +25,39 @@ const Routes = (props) => {
   return (
     <BrowserRouter history={history}>
       <Switch>
-        <Route path="/admin" component={Temp} exact />
+        <ProtectedRoute path="/admin" component={Temp} exact />
         <Route path="/login" component={SignInSide} exact />
         <Route path="/register" component={SignUp} exact />
-        <Route path="/courses" component={Courses} exact />
-        <Route path="/courses/:courseId/quiz" component={Quiz} exact />
-        <Route path="/team" component={Team} exact />
-        <Route path="/leaderBoard" component={Example} exact />
-        <Route path="/courses/:id" component={CourseOverview} exact />
-        <Route path="/video/:id" component={VideoScreen} exact />
-        <Route path="/admin/upload/course" component={UploadCourse} exact />
-        <Route path="/editor" exact component={CodeEditor}/>
-        <Route path="/admin/upload_course" component={UploadCourse} exact />
-        <Route path="/adminlogin" component={AdminLogin} exact />
-        <Route path="/reports" component={Reports} exact />
-        <Route path="/editor" exact component={CodeEditor} />
-        <Route path="/admin/upload_course" component={UploadCourse} exact />
-        <Route path="/adminlogin" component={AdminLogin} exact />
-        <Route path="/reports" component={Reports} exact />
-        <Route path="/" component={Home} exact />
-        <Route path="/notes" component={TodoTemp} exact/>
-        <Route path="/:anything" component={NotFound} />
+        <ProtectedRoute path="/courses" component={Courses} exact />
+        <ProtectedRoute path="/courses/:courseId/quiz" component={Quiz} exact />
+        <ProtectedRoute path="/team" component={Team} exact />
+        <ProtectedRoute path="/leaderBoard" component={Example} exact />
+        <ProtectedRoute path="/courses/:id" component={CourseOverview} exact />
+        <ProtectedRoute path="/video/:id" component={VideoScreen} exact />
+        <ProtectedRoute
+          path="/admin/upload/course"
+          component={UploadCourse}
+          exact
+        />
+        <ProtectedRoute path="/editor" exact component={CodeEditor} />
+        <ProtectedRoute
+          path="/admin/upload_course"
+          component={UploadCourse}
+          exact
+        />
+        <ProtectedRoute path="/adminlogin" component={AdminLogin} exact />
+        <ProtectedRoute path="/reports" component={Reports} exact />
+        <ProtectedRoute path="/editor" exact component={CodeEditor} />
+        <ProtectedRoute
+          path="/admin/upload_course"
+          component={UploadCourse}
+          exact
+        />
+        <ProtectedRoute path="/adminlogin" component={AdminLogin} exact />
+        <ProtectedRoute path="/reports" component={Reports} exact />
+        <ProtectedRoute path="/notes" component={TodoTemp} exact />
+        <ProtectedRoute path="/" component={Home} exact />
+        <ProtectedRoute path="/:anything" component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
