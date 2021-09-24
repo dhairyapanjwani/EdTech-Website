@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import './Reports.css';
 
 import QuizApi from '../../util/QuizApi';
 import Bar from '../../components/charts/Bar';
 import MultiAxisLine from '../../components/charts/Line';
+import { GlobalContext } from '../../GlobalContext';
 
 const Reports = props => {
     const [results, setResults] = useState([]);
+    const {userInfo} = useContext(GlobalContext);
+    const [userData, setUserData] = userInfo;
     useEffect(() => {
         const fetcher = async () => {
             console.log('Starting');
-            const data = await QuizApi.getResult('614adf467e4020a62c1b157d');
+            const data = await QuizApi.getResult(userData._id);
             console.log(data.data); 
             setResults(data.data.results);
         };

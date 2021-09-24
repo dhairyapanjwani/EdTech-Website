@@ -94,6 +94,17 @@ const leader = [
 // className="tab1"
 export default function Example() {
   const [leadData, setLeadData] = useState([{}]);
+
+  const highs = (id, user, highest) => {
+    return {
+      id: id,
+      user: user,
+      highest: highest,
+    };
+  };
+  const [high, setHigh] = useState([]);
+  let [largest, setLargest] = useState(18322);
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await UserApi.getLeaderboard();
@@ -103,13 +114,17 @@ export default function Example() {
 
     fetchData();
   }, []);
+
+  const reduce = (val) => {
+    return val - 1;
+  };
   return (
     <div className="bg-gray-50 dark:bg-gray-800">
       <Navbar />
       <Index />
       <div className="flex items-center font-normal justify-center bg-white-800">
-        <div className="col-span-12">
-          <div className="overflow-auto lg:overflow-visible">
+        <div className="w-2/3">
+          <div className="overflow-auto lg:overflow-visible w-full">
             <div className="tab1">
               {/* <h2 className="text-2xl font-bold bg-indigo-500 hover:bg-blue-700 text-white py-1 px-3 sm rounded-full">Leader Board</h2>
                             
@@ -138,11 +153,11 @@ export default function Example() {
                                 >
                             </div> */}
             </div>
-            <div className="mb-28">
-              <table className="table text-gray-400 border-separate space-y-6 text-sm">
+            <div className="mb-28 w-full">
+              <table className="table w-full text-gray-400 border-separate space-y-6 text-sm">
                 <thead className="bg-indigo-500 text-white">
                   <tr>
-                    <th className="p-3">#Rank</th>
+                    <th className="p-3 text-left">#Rank</th>
                     <th className="p-3 text-left">Name</th>
                     <th className="p-3 text-left">UserName</th>
                     <th className="p-3 text-left">Points</th>
@@ -152,22 +167,26 @@ export default function Example() {
                   </tr>
                 </thead>
                 <tbody>
-                  {leadData.map((elem) => (
-                    <tr className="bg-blue-200 lg:text-black">
-                      <td className="p-3 font-medium capitalize">1</td>
-                      <td className="p-3">
-                        {elem.first_name} {elem.last_name}
-                      </td>
-                      <td className="p-3">{elem.email}</td>
-                      <td className="p-3 uppercase">50</td>
-
-                      <td className="p-3">
-                        <span className="bg-green-400 text-gray-50 rounded-md px-2">
-                          400
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
+                  {leadData.length !== 0 &&
+                    leadData.map((elem, index) => {
+                      return (
+                        <tr className="dark:bg-gray-700 bg-gray-200 dark:text-gray-200 text-gray-800 lg:text-black">
+                          <td className="p-3 font-medium capitalize">
+                            {index + 1}
+                          </td>
+                          <td className="p-3">
+                            {elem.first_name} {elem.last_name}
+                          </td>
+                          <td className="p-3">{elem.email}</td>
+                          <td className="p-3 uppercase">{reduce(largest)}</td>
+                          <td className="p-3">
+                            <span className="bg-green-400 text-gray-50 rounded-md px-2">
+                              18322
+                            </span>
+                          </td>
+                        </tr>
+                      );
+                    })}
                 </tbody>
               </table>
             </div>

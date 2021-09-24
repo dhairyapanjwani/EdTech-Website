@@ -5,6 +5,7 @@ import { BellIcon, MenuIcon, XIcon, SunIcon, MoonIcon, ShoppingCartIcon } from '
 import { useHistory } from 'react-router';
 import { GlobalContext } from '../../GlobalContext';
 import UserApi from '../../util/UserApi';
+import fragments from '../../assets/images/fragments.png';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -26,7 +27,6 @@ export default function Navbar() {
         { name: 'Courses', href: '/courses', current: curr === '/courses' ? true : false },
         { name: 'CodeEditor', href: '/editor', current: curr === '/editor' ? true : false },
         { name: 'Reports', href: '/reports', current: curr === '/reports' ? true : false },
-        { name: 'Our Team', href: '/team', current: curr === '/team' ? true : false },
         { name: 'Notes', href: '/notes', current: curr === '/notes' ? true : false },
     ]
 
@@ -60,17 +60,12 @@ export default function Navbar() {
                                 </Disclosure.Button>
                             </div>
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                                <div className="flex-shrink-0 flex items-center" onClick={() => history.push('/')}>
-                                    <img
-                                        className="block lg:hidden h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                                        alt="Workflow"
-                                    />
+                                <div className="flex-shrink-0 flex items-center text-white font-black" onClick={() => history.push('/')} style={{ cursor: 'pointer' }}>
                                     <img
                                         className="hidden lg:block h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                                        src={fragments}
                                         alt="Workflow"
-                                    />
+                                    /> Fragments
                                 </div>
                                 <div className="hidden sm:block sm:ml-6">
                                     <div className="flex space-x-4">
@@ -95,12 +90,6 @@ export default function Navbar() {
                                 </div>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                            <button
-                                    type="button"
-                                    className="p-1.5 rounded-full text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-0.5 focus:ring-offset-gray-800 focus:ring-white bg-indigo-600 mr-2"
-                                >
-                                    <ShoppingCartIcon className="h-6 w-6 bg-indigo-600"/>    
-                                </button>
                                 <button
                                     type="button"
                                     className="p-1.5 rounded-full text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-0.5 focus:ring-offset-gray-800 focus:ring-white bg-indigo-600"
@@ -161,10 +150,10 @@ export default function Navbar() {
                                             <Menu.Item>
                                                 {({ active }) => (
                                                     <a
-                                                        href="#"
+                                                        onClick={() => history.push('/team')}
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:bg-gray-600')}
                                                     >
-                                                        Settings
+                                                        Our Team
                                                     </a>
                                                 )}
                                             </Menu.Item>
