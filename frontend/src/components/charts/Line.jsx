@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Line } from 'react-chartjs-2';
 import QuizApi from '../../util/QuizApi';
+import { GlobalContext } from '../../GlobalContext';
 
 const MultiAxisLine = () => {
     const [labelArr, setLabelArr] = useState([]), [score, setScore] = useState([]), [avg, setAvg] = useState([]);
+    const {userInfo} = useContext(GlobalContext);
+    const [userData, setUserData] = userInfo;
     useEffect(() => {
         const labelArr_ = [], score_ = [], avg_ = [];
         const fetcher = async () => {
             console.log('Starting');
-            const data = await QuizApi.getResult('614adf467e4020a62c1b157d');
+            const data = await QuizApi.getResult(userData._id);
             data.data.results.map(elem => {
                 // setLabelArr(labelArr.push(elem.date));
                 // setScore([score.push(elem.score)]);
