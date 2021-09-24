@@ -12,6 +12,8 @@ const courseSchema=mongoose.Schema({
     amount:{type:Number,default:0},
     attachment_name:{type:String,default:""},
     likes:{type:Array,default:[]},
+    ml_comments:{type:Number,default:0},
+    ml_likes:{type:Number,default:0}
 },
 { timestamps: true }
 );

@@ -3,7 +3,9 @@ const router=express.Router();
 const mongoose=require('mongoose');
 const Course=require('../models/Course');
 const multer = require('multer');
+const axios=require('axios');
 var date;
+
 const storage=multer.diskStorage({
     destination:(req,file,callback)=>{
       callback(null,"./uploads/cover");
@@ -45,7 +47,7 @@ router.get("/all",async (req, res) => {
   })
 })
 
-router.get("/:category",async (req, res) => {
+router.get("/getcategory/:category",async (req, res) => {
 
     Course.find({'category':req.params.category},(err,result)=>{
       if(err){
@@ -107,5 +109,87 @@ router.get("/:category",async (req, res) => {
       res.status(200).json({message:"success",courses:courses});
   })
   })
+
+
+//for machine learning
+router.put("/update",async (req, res) => {
+
+  const courseId=req.body.courseId
+
+  Course.findById(courseId,(err,course)=>{
+    if(err){
+      res.status(500).json({message:"failure",error:err});
+    }
+    
+      course.ml_comments=Math.floor(Math.random() * (2000 - 100 + 1) + 100);
+      
+      course.markModified('ml_comments');
+      course.save()
+      .then((course)=>{
+        course.ml_likes=Math.floor(Math.random() * (3000 - 100 + 1) + 100);
+        course.markModified('ml_likes');
+        course.save()
+        .then((course)=>{
+          res.status(200).json({message:"success",course:course});
+        })
+      })
+      
+    
+    
+})
+})
+
+
+router.get("/getranked",async (req, res) => {
+  var courses=[];
+  var predictions
+  var send=[]
+  Course.find({},(err,course)=>{
+    if(err){
+      res.status(500).json(err);
+    }
+    for (let i=0;i<course.length;i++){
+        var ml_comments=course[i].ml_comments;
+        var ml_likes=course[i].ml_likes;
+        send.push([ml_comments,ml_likes])
+        courses.push(course[i])
+    }
+    axios({
+      url: `http://localhost:8008/${JSON.stringify({send}["send"])}`,
+      method: "get",
+    })
+      .then(response => {
+        var predictions=response.data.data;
+        console.log(predictions)
+        for(let i=0;i<predictions.length;i++){
+          courses[i].results.push(predictions[i])
+        }
+        courses.sort((a,b) => {
+          if(a.results[0] > b.results[0]) return -1;
+          if(a.results[0] < b.results[0]) return 1;
+          return 0;
+      });
+      console.log(courses)
+        res.status(200).json({message:"success",courses:courses});
+      })
+    
+})
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports=router;

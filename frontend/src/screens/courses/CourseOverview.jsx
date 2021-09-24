@@ -4,6 +4,7 @@ import VideoStepCard from '../../components/card/VideoStepCard';
 import './CourseOverview.css'
 import Axios from 'axios';
 import { useHistory, useParams } from 'react-router-dom';
+import { GlobalContext } from '../../GlobalContext';
 
 
 function CourseOverview({match}) {
