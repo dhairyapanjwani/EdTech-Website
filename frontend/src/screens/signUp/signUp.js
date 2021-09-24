@@ -20,7 +20,6 @@ import useValidation from "../../validation/useValidation";
 import "./register.css";
 import register from "../../assets/images/register.png";
 
-
 export default function SignInSide() {
   const history = useHistory();
   const [isChecked, setChecked] = useState({ value: true, initial: true });
@@ -55,19 +54,26 @@ export default function SignInSide() {
 
     console.log(vals);
   };
-  
+
   return (
-    <div className="bg-gray-50" id="SignIn-Main-Block">
-      
-        <div className="grid grid-cols-3 gap-4">
-          <div className="col-span-2 mt-30 grid place-content-center">
-            <figure>
-              <img className="signImg w-full" src={register} alt="SignIn picture" />
-            </figure>
-          </div>
-          <div className="bg-gray-50 max-w-lg -mt-5">
-          <Container  >
-              <CssBaseline />
+    <div
+      className="bg-gray-50 flex flex-col justify-center align-center m-auto"
+      id="SignIn-Main-Block"
+    >
+      <div className="grid grid-cols-3 gap-4">
+        <div className="col-span-2 mt-30 grid place-content-center">
+          <figure>
+            <img
+              className="signImg w-full"
+              src={register}
+              alt="SignIn picture"
+            />
+          </figure>
+        </div>
+        <div className="bg-gray-50 max-w-lg -mt-5">
+          <Container>
+            <CssBaseline />
+            <div className="border-2 border-gray-200 border-opacity-60 rounded-lg p-6">
               <div className={classes.paper}>
                 <Avatar
                   className={classes.avatar}
@@ -182,9 +188,10 @@ export default function SignInSide() {
                   </Grid>
                 </form>
               </div>
-            </Container>
-          </div>
+            </div>
+          </Container>
         </div>
       </div>
+    </div>
   );
 }
