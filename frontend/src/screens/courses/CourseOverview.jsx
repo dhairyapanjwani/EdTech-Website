@@ -18,6 +18,7 @@ function CourseOverview({match}) {
     });
     const [videoList,setVideoList]=useState([]);
     useEffect(()=>{
+        console.log(JSON.parse(localStorage.getItem("edtech-user")))
         Axios.get(`http://localhost:3001/api/course/single/${match.params.id}`)
         .then((response)=>{
             console.log(response.data)
@@ -49,6 +50,89 @@ function CourseOverview({match}) {
     const executeScroll = () => scrollRef.current.scrollIntoView()
     const history = useHistory();
     const param = useParams();
+
+
+    //razorpay
+    // function loadScript(src) {
+    //     return new Promise((resolve) => {
+    //         const script = document.createElement("script");
+    //         script.src = src;
+    //         script.onload = () => {
+    //             resolve(true);
+    //         };
+    //         script.onerror = () => {
+    //             resolve(false);
+    //         };
+    //         document.body.appendChild(script);
+    //     });
+    // }
+
+    // async function displayRazorpay(amt) {
+    //     const res = await loadScript(
+    //         "https://checkout.razorpay.com/v1/checkout.js"
+    //     );
+
+    //     if (!res) {
+    //         alert("Razorpay SDK failed to load. Are you online?");
+    //         return;
+    //     }
+
+    //     const result = await Axios.post("http://localhost:3001/api/payment/orders",{userId:JSON.parse(localStorage.getItem('edtech-user'))._id,courseId:match.params.id,amount:course.amount});
+
+    //     if (!result) {
+    //         alert("Server error. Are you online?");
+    //         return;
+    //     }
+
+    //     const { amount, id: order_id, currency } = result.data;
+
+    //     const options = {
+    //         key: "rzp_test_CYQ81y4KZJOjlT", 
+    //         amount: amount.toString(),
+    //         currency: currency,
+    //         name: JSON.parse(localStorage.getItem('edtech-user')).name,
+    //         description: `Paying Rs. ${username}`,
+    //         image: "logo.png",
+    //         order_id: order_id,
+    //         handler: async function (response) {
+    //             const data = {
+    //                 userId:JSON.parse(localStorage.getItem('edtech-user'))._id,
+    //                 courseId:_id,
+    //                 amount:amt,
+    //                 orderCreationId: order_id,
+    //                 razorpayPaymentId: response.razorpay_payment_id,
+    //                 razorpayOrderId: response.razorpay_order_id,
+    //                 razorpaySignature: response.razorpay_signature
+    //             };
+
+    //             const result = await Axios.post("http://localhost:3001/api/payment/finalorders", data);
+
+    //             if(result.data.message=="success"){
+    //                 setBody("body2")
+    //                 setOpen(true)
+    //             }
+    //         },
+    //         prefill: {
+    //             name: JSON.parse(localStorage.getItem('edtech-user')).first_name,
+    //             email: JSON.parse(localStorage.getItem('user')).email,
+    //             contact: JSON.parse(localStorage.getItem('user')).phone,
+    //         },
+    //         theme: {
+    //             color: "#6366F1",
+    //         },
+    //     };
+
+    //     const paymentObject = new window.Razorpay(options);
+    //     paymentObject.open();
+    // }
+    const pay=()=>{
+    //     displayRazorpay(amount)
+    }
+    //razorpay
+
+
+
+
     return (
         <div className="bg-gray-50 dark:bg-gray-800 ">
             <Navbar/>
@@ -71,6 +155,7 @@ function CourseOverview({match}) {
                     </div>
                     <div className="flex w-1/3 ">
                         <button 
+                            onClick={pay} 
                             type="button" 
                             className="px-4 py-3 bg-indigo-500 border-2 border-indigo-500 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform  flex justify-center w-1/3 h-1/3 mr-4"
                         >
