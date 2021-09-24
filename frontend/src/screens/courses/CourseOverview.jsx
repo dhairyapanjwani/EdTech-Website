@@ -3,7 +3,8 @@ import Navbar from '../../components/navbar/Navbar'
 import VideoStepCard from '../../components/card/VideoStepCard';
 import './CourseOverview.css'
 import Axios from 'axios';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams,Link } from 'react-router-dom';
+import { GlobalContext } from '../../GlobalContext';
 
 
 function CourseOverview({match}) {
@@ -13,10 +14,15 @@ function CourseOverview({match}) {
         amount:0,
         rating:[0,0,0,0,0],
         cover_name:"",
-        attachment_name:""
+        attachment_name:"",
+        id:""
     });
+    const [isEnrolled,setIsEnrolled]=useState(false)
     const [videoList,setVideoList]=useState([]);
     useEffect(()=>{
+        if(JSON.parse(localStorage.getItem('edtech-user')).enrolled.includes(match.params.id)){
+            setIsEnrolled(true)
+        }
         Axios.get(`http://localhost:3001/api/course/single/${match.params.id}`)
         .then((response)=>{
             console.log(response.data)
@@ -27,6 +33,7 @@ function CourseOverview({match}) {
                 rating:[0,0,0,0,0].fill(1, 0, response.data.course.rating),
                 cover_name:response.data.course.cover_name,
                 attachment_name:response.data.course.attachment_name,
+                id:match.params.id,
             })
         })
         .catch((err)=>{
@@ -45,9 +52,98 @@ function CourseOverview({match}) {
     },[])
 
     const scrollRef = useRef(null)
-    const executeScroll = () => scrollRef.current.scrollIntoView()
+    const executeScroll = () => {isEnrolled?scrollRef.current.scrollIntoView():window.alert("Please enroll first")}
     const history = useHistory();
     const param = useParams();
+
+
+    //razorpay
+    function loadScript(src) {
+        return new Promise((resolve) => {
+            const script = document.createElement("script");
+            script.src = src;
+            script.onload = () => {
+                resolve(true);
+            };
+            script.onerror = () => {
+                resolve(false);
+            };
+            document.body.appendChild(script);
+        });
+    }
+
+    async function displayRazorpay(amt) {
+        const res = await loadScript(
+            "https://checkout.razorpay.com/v1/checkout.js"
+        );
+
+        if (!res) {
+            alert("Razorpay SDK failed to load. Are you online?");
+            return;
+        }
+
+        const result = await Axios.post("http://localhost:3001/api/payment/orders",{userId:JSON.parse(localStorage.getItem('edtech-user'))._id,courseId:match.params.id,amount:course.amount});
+
+        if (!result) {
+            alert("Server error. Are you online?");
+            return;
+        }
+
+        const { amount, id: order_id, currency } = result.data;
+
+        const options = {
+            key: "rzp_test_CYQ81y4KZJOjlT", 
+            amount: amount.toString(),
+            currency: currency,
+            name: JSON.parse(localStorage.getItem('edtech-user')).name,
+            description: `Paying Rs. ${amt}`,
+            image: "logo.png",
+            order_id: order_id,
+            handler: async function (response) {
+                const data = {
+                    userId:JSON.parse(localStorage.getItem('edtech-user'))._id,
+                    courseId:course.id,
+                    amount:amt,
+                    orderCreationId: order_id,
+                    razorpayPaymentId: response.razorpay_payment_id,
+                    razorpayOrderId: response.razorpay_order_id,
+                    razorpaySignature: response.razorpay_signature
+                };
+
+                const result = await Axios.post("http://localhost:3001/api/payment/finalorders", data);
+
+                if(result.data.message=="success"){
+                    window.alert("Payment successfull")
+                    localStorage.setItem("edtech-user", JSON.stringify(result.data.user));
+                    setIsEnrolled(true)
+                }
+            },
+            prefill: {
+                name: JSON.parse(localStorage.getItem('edtech-user')).first_name,
+                email: JSON.parse(localStorage.getItem('edtech-user')).email,
+                contact: JSON.parse(localStorage.getItem('edtech-user')).phone,
+            },
+            theme: {
+                color: "#6366F1",
+            },
+        };
+
+        const paymentObject = new window.Razorpay(options);
+        paymentObject.open();
+    }
+    const pay=()=>{
+        if(!isEnrolled){
+            displayRazorpay(course.amount)
+        }
+        else{
+            window.alert("You've already enrolled for this course")
+        }
+    }
+    //razorpay
+
+
+
+
     return (
         <div className="bg-gray-50 dark:bg-gray-800 ">
             <Navbar/>
@@ -70,10 +166,11 @@ function CourseOverview({match}) {
                     </div>
                     <div className="flex w-1/3 ">
                         <button 
+                            onClick={pay} 
                             type="button" 
                             className="px-4 py-3 bg-indigo-500 border-2 border-indigo-500 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-75 transition-transform  flex justify-center w-1/3 h-1/3 mr-4"
                         >
-                            <span className="">Enroll now</span>
+                            <span className="">{isEnrolled?"Enrolled":"Enroll now"}</span>
                         </button>
                         <button 
                             onClick={executeScroll}
@@ -86,7 +183,11 @@ function CourseOverview({match}) {
                 </div>
                 </div>
             </div>
+
+
             {/* _________________________________________________ */}
+            {isEnrolled?
+            <div>
             <div  className="w-full mt-16 flex flex-col items-center">
             <h1 className="title-font text-3xl  font-bold text-gray-900 dark:text-gray-100  ">{course.title}</h1>
             <p className="leading-relaxed text-sm  pt-1  dark:text-gray-400">Get this course @ just Rs. {course.amount}/-</p>
@@ -105,7 +206,7 @@ function CourseOverview({match}) {
                         </svg>
                     </div>
                     <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                    <a href={`http://localhost:3001/api/uploads/attachments/${course.attachment_name}`} target="_blank" className="text-indigo-500 inline-flex items-center mt-4 md:mb-2 lg:mb-0">Study Material
+                    <a href={`http://localhost:3001/api/uploads/attachments/${course.attachment_name}`}  target="_blank" className="text-indigo-500 inline-flex items-center mt-4 md:mb-2 lg:mb-0">Study Material
                       <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M5 12h14"></path>
                         <path d="M12 5l7 7-7 7"></path>
@@ -143,7 +244,7 @@ function CourseOverview({match}) {
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                         </svg>
                     </div>
-                    <div className="flex-grow sm:pl-6 mt-6 sm:mt-0" onClick={() => history.push(`${param.id}/quiz`)}>
+                    <div className="flex-grow sm:pl-6 mt-6 sm:mt-0" onClick={() =>{history.push(`${param.id}/quiz`)}}>
                     <a className="text-indigo-500 inline-flex items-center mt-4 md:mb-2 lg:mb-0">Start Quiz
                       <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M5 12h14"></path>
@@ -155,7 +256,8 @@ function CourseOverview({match}) {
                     </div>
     </div>
             </div>
-        </div>
+            </div>:<div></div>}
+            </div>
     )
 }
 

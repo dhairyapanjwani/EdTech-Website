@@ -36,7 +36,7 @@ router.post("/orders", async (req, res) => {
 
 router.post("/finalorders", async (req, res) => {
     const userId=req.body.userId;
-    const category=req.body.category;
+    const courseId=req.body.courseId;
     const amount=req.body.amount;
     const date=Date.now()
     
@@ -58,22 +58,25 @@ router.post("/finalorders", async (req, res) => {
 
         await User.findById(userId,function (err, result) {
             console.log(result)
-            result.paid.push({category:category,amount:amount,donationTime:date})
-            result.markModified('paid');
-            result.save();
+            result.enrolled.push(courseId)
+            result.markModified('enrolled');
+            result.save()
+            .then(()=>{
+                res.status(200).json({
+                    message:"success",
+                    user:result
+                })
+            })
             
           }
           ).catch((err)=>{
-              res.status(500).json(err);
+              console.log(err)
             })
         
-        res.status(200).json({
-            message:"success"
-        })
+        
 
     } catch (error) {
         console.log(error)
-        res.status(500).send(error);
     }
 });
 
