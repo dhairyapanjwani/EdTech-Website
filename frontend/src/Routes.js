@@ -17,11 +17,12 @@ import Reports from "./screens/report/Reports";
 import UploadCourse from "./admin/screens/upload_course/UploadCourse";
 import CourseOverview from "./screens/courses/CourseOverview";
 import QuestionCard from "./components/quiz/QuestionCard";
-import TodoTemp from "./screens/todo/TodoTemp";
+import NotesMain from "./screens/notes/NotesMain";
 
 const Routes = (props) => {
   const history = createBrowserHistory();
 
+  
   return (
     <BrowserRouter history={history}>
       <Switch>
@@ -55,9 +56,9 @@ const Routes = (props) => {
         />
         <ProtectedRoute path="/adminlogin" component={AdminLogin} exact />
         <ProtectedRoute path="/reports" component={Reports} exact />
-        <ProtectedRoute path="/notes" component={TodoTemp} exact />
+        <ProtectedRoute path="/notes" component={NotesMain} exact />
         <ProtectedRoute path="/" component={Home} exact />
-        <ProtectedRoute path="/:anything" component={NotFound} />
+        <ProtectedRoute path="/:anything" component={NotFound} /> 
       </Switch>
     </BrowserRouter>
   );
