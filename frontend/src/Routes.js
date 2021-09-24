@@ -22,6 +22,7 @@ import NotesMain from "./screens/notes/NotesMain";
 const Routes = (props) => {
   const history = createBrowserHistory();
 
+  
   return (
     <BrowserRouter history={history}>
       <Switch>
