@@ -29,7 +29,7 @@ const Reports = props => {
             <div className="w-1/2 text-center mx-auto mt-8 mb-2">
                 <MultiAxisLine />
             </div>
-            <div className="dark:text-white text-black" id="Reports-Leaderboard" onClick={() => history.push('/leaderBoard')}>
+            <div className="dark:text-white text-black p-4 dark:bg-gray-700 bg-gray-200 rounded-lg uppercase font-black" id="Reports-Leaderboard" onClick={() => history.push('/leaderBoard')}>
                 Leaderboard
             </div>
             <div className="bg-gray-50 dark:bg-gray-800 p-6 flex flex-row flex-wrap justify-center align-center">

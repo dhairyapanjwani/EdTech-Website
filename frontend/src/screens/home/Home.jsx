@@ -1,8 +1,9 @@
 import React from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import './Home.css';
-import home_illustrations from './a1.svg';
-import course_img from './course_img.jpg';
+import course_illustrations1 from './a1.jpg';
+import course_illustrations2 from './a2.jpg';
+import course_illustrations3 from './a3.jpg';
 import { Link } from 'react-router-dom';
 import home_illus from '../../assets/svgs/home.svg';
 import testimonial from '../../assets/svgs/testimonial.svg';
@@ -44,7 +45,7 @@ const Home = () => {
                     
                         <div className="p-4 md:w-1/3">
                             <div className="h-full bg-gray-100 rounded-lg overflow-hidden dark:bg-gray-800 border-2 dark:border-gray-600">
-                                <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={course_img} alt="blog" />
+                                <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={course_illustrations1} alt="blog" />
                                 <div className="p-6">
                                     <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">REACTJS</h2>
                                     <h1 className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Advanced ReactJS</h1>
@@ -71,10 +72,10 @@ const Home = () => {
                         </div>
                         <div className="p-4 md:w-1/3">
                             <div className="h-full bg-gray-100 rounded-lg overflow-hidden dark:bg-gray-800 border-2 dark:border-gray-600">
-                                <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={course_img} alt="blog" />
+                                <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={course_illustrations2} alt="blog" />
                                 <div className="p-6">
-                                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">REACTJS</h2>
-                                    <h1 className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Advanced ReactJS</h1>
+                                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">DJANGO</h2>
+                                    <h1 className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Advanced Django</h1>
                                     <p className="leading-relaxed mb-3 dark:text-gray-500">This Course is for advanced level</p>
                                     <div className="flex items-center flex-wrap ">
                                         <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
@@ -99,10 +100,10 @@ const Home = () => {
 
                         <div className="p-4 md:w-1/3">
                             <div className="h-full bg-gray-100 rounded-lg overflow-hidden dark:bg-gray-800 border-2 dark:border-gray-600">
-                                <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={course_img} alt="blog" />
+                                <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={course_illustrations3} alt="blog" />
                                 <div className="p-6">
-                                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">REACTJS</h2>
-                                    <h1 className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Advanced ReactJS</h1>
+                                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">NODEJS</h2>
+                                    <h1 className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Advanced NodeJS</h1>
                                     <p className="leading-relaxed mb-3 dark:text-gray-500">This Course is for advanced level</p>
                                     <div className="flex items-center flex-wrap ">
                                         <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
