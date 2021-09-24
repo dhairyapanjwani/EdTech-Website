@@ -37,11 +37,11 @@ function VideoScreen({match}) {
         console.log("submitted")
         Axios.put('http://localhost:3001/api/video/comment',
         {
-            userId:"614adf467e4020a62c1b157d",
-            profile:"1.jpg",
+            userId:JSON.parse(localStorage.getItem("edtech-user"))._id,
+            profile:JSON.parse(localStorage.getItem("edtech-user")).profile,
             text:comment,
-            videoId:"6149da7a6373a37ef73981fb",
-            name:"Rishabh",
+            videoId:match.params.id,
+            name:JSON.parse(localStorage.getItem("edtech-user")).first_name,
         }
         ).then(()=>{
             setComment("");
