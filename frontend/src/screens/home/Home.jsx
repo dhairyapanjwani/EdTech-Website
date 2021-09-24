@@ -74,8 +74,8 @@ const Home = () => {
                             <div className="h-full bg-gray-100 rounded-lg overflow-hidden dark:bg-gray-800 border-2 dark:border-gray-600">
                                 <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={course_illustrations2} alt="blog" />
                                 <div className="p-6">
-                                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">REACTJS</h2>
-                                    <h1 className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Advanced ReactJS</h1>
+                                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">DJANGO</h2>
+                                    <h1 className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Advanced Django</h1>
                                     <p className="leading-relaxed mb-3 dark:text-gray-500">This Course is for advanced level</p>
                                     <div className="flex items-center flex-wrap ">
                                         <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
@@ -102,8 +102,8 @@ const Home = () => {
                             <div className="h-full bg-gray-100 rounded-lg overflow-hidden dark:bg-gray-800 border-2 dark:border-gray-600">
                                 <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={course_illustrations3} alt="blog" />
                                 <div className="p-6">
-                                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">REACTJS</h2>
-                                    <h1 className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Advanced ReactJS</h1>
+                                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">NODEJS</h2>
+                                    <h1 className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Advanced NodeJS</h1>
                                     <p className="leading-relaxed mb-3 dark:text-gray-500">This Course is for advanced level</p>
                                     <div className="flex items-center flex-wrap ">
                                         <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
